@@ -1,1 +1,0 @@
-import"./hoisted-C-yFQQvw.js";document.addEventListener("DOMContentLoaded",function(){var n=document.getElementById("myModal"),e=document.getElementById("openModalBtn");e?e.onclick=function(){n.style.display="block"}:console.error("Button element not found"),window.onclick=function(t){t.target==n&&(n.style.display="none")}});
