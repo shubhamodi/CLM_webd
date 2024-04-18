@@ -1,0 +1,90 @@
+---
+import "~/assets/styles/tailwind.css";
+
+import { I18N } from "~/utils/config";
+
+import CommonMeta from "~/components/common/CommonMeta.astro";
+import Favicons from "~/components/Favicons.astro";
+import CustomStyles from "~/components/CustomStyles.astro";
+import ApplyColorMode from "~/components/common/ApplyColorMode.astro";
+import Metadata from "~/components/common/Metadata.astro";
+import SiteVerification from "~/components/common/SiteVerification.astro";
+import Analytics from "~/components/common/Analytics.astro";
+import BasicScripts from "~/components/common/BasicScripts.astro";
+import type { MetaData as MetaDataType } from "~/types";
+import { ViewTransitions } from "astro:transitions";
+
+export interface Props {
+  metadata?: MetaDataType;
+}
+
+const { metadata = {} } = Astro.props;
+const { language, textDirection } = I18N;
+---
+
+<!doctype html>
+<html lang={language} dir={textDirection} class="2xl:text-[20px]">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P2M61WYZ4S"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-P2M61WYZ4S");
+  </script>
+
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] =
+        c[a] ||
+        function () {
+          (c[a].q = c[a].q || []).push(arguments);
+        };
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "jjkluj9lav");
+  </script>
+
+  <noscript
+    ><img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=647724134101190&ev=PageView&noscript=1"
+    /></noscript
+  >
+  <!-- End Meta Pixel Code -->
+
+  <head>
+    <CommonMeta />
+    <Favicons />
+    <CustomStyles />
+    <ApplyColorMode />
+    <Metadata {...metadata} />
+    <SiteVerification />
+    <Analytics />
+
+    <!-- Comment the line below to disable View Transitions -->
+    <ViewTransitions fallback="swap" />
+  </head>
+
+  <body class="antialiased text-default bg-page tracking-tight">
+    <slot />
+
+    <BasicScripts />
+
+    <style is:global>
+      img {
+        content-visibility: auto;
+      }
+    </style>
+  </body>
+
+
+</html>

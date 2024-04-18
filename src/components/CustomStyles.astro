@@ -1,0 +1,425 @@
+<style is:inline is:global>
+  .custom-scroll::-webkit-scrollbar {
+    width: 0.2rem;
+    /* background-color: #1D202A; */
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background-color: #1d2531;
+    border-radius: 5px;
+  }
+
+  .star {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+    height: 2px;
+    background: linear-gradient(-45deg, #fff, rgba(0, 0, 255, 0));
+    border-radius: 999px;
+    filter: drop-shadow(0 0 6px #fff);
+    animation:
+      tail 3s ease-in-out infinite,
+      falling 3s ease-in-out infinite;
+  }
+
+  @keyframes tail {
+    0% {
+      width: 0;
+    }
+
+    30% {
+      width: 100px;
+    }
+
+    100% {
+      width: 0;
+    }
+  }
+
+  @keyframes falling {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(300px);
+    }
+  }
+
+  .star::before,
+  .star::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 2px);
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      -45deg,
+      rgba(0, 0, 255, 0),
+      #fff,
+      rgba(0, 0, 255, 0)
+    );
+    border-radius: 100%;
+    transform: translateX(50%) rotateZ(45deg);
+    animation: shining 3s ease-in-out infinite;
+  }
+
+  @keyframes shining {
+    0% {
+      width: 0;
+    }
+
+    50% {
+      width: 30px;
+    }
+
+    100% {
+      width: 0;
+    }
+  }
+
+  .star::after {
+    transform: translateX(50%) rotateZ(-45deg);
+  }
+
+  .star:nth-child(1) {
+    top: calc(20% - 100px);
+    left: calc(90% - 250px);
+    animation-delay: 1s;
+  }
+
+  .star:nth-child(1)::before,
+  .star:nth-child(1)::after {
+    animation-delay: 1s;
+  }
+
+  .star:nth-child(2) {
+    top: calc(50% - 50px);
+    left: calc(25% - 200px);
+    animation-delay: 1.2s;
+  }
+
+  .star:nth-child(2)::before,
+  .star:nth-child(2)::after {
+    animation-delay: 1.2s;
+  }
+
+  .star:nth-child(3) {
+    top: calc(80%);
+    left: calc(30% - 150px);
+    animation-delay: 1.4s;
+  }
+
+  .star:nth-child(3)::before,
+  .star:nth-child(3)::after {
+    animation-delay: 1.4s;
+  }
+
+  .star:nth-child(4) {
+    top: calc(50% - -50px);
+    left: calc(90% - 100px);
+    animation-delay: 1.6s;
+  }
+
+  .star:nth-child(4)::before,
+  .star:nth-child(4)::after {
+    animation-delay: 1.6s;
+  }
+
+  .star:nth-child(5) {
+    top: calc(10% - -100px);
+    left: calc(10% - 50px);
+    animation-delay: 1.8s;
+  }
+
+  .star:nth-child(5)::before,
+  .star:nth-child(5)::after {
+    animation-delay: 1.8s;
+  }
+
+  .star:nth-child(6) {
+    top: calc(70% - 100px);
+    right: calc(10% - 50px);
+    animation-delay: 1.8s;
+  }
+
+  .star:nth-child(6)::before,
+  .star:nth-child(6)::after {
+    animation-delay: 1.8s;
+  }
+
+  .star:nth-child(7) {
+    /* left: calc(10% - -100px); */
+    top: calc(5%);
+    left: calc(10%);
+    animation-delay: 0.9s;
+  }
+
+  .star:nth-child(7)::before,
+  .star:nth-child(7)::after {
+    animation-delay: 1.8s;
+  }
+
+  .star:nth-child(8) {
+    bottom: calc(10%);
+    right: calc(20% - 50px);
+    animation-delay: 1.8s;
+  }
+
+  .star:nth-child(8)::before,
+  .star:nth-child(8)::after {
+    animation-delay: 1.8s;
+  }
+
+  @keyframes loading {
+    to {
+      background-position:
+        315px 0,
+        0 0,
+        0 190px,
+        50px 195px;
+    }
+  }
+
+  .video:empty {
+    cursor: progress;
+    background: linear-gradient(0.25turn, transparent, #fff, transparent),
+      linear-gradient(#eee, #eee),
+      radial-gradient(38px circle at 19px 19px, #eee 50%, transparent 51%),
+      linear-gradient(#eee, #eee);
+    background-repeat: no-repeat;
+    background-size:
+      315px 250px,
+      315px 180px,
+      100px 100px,
+      225px 30px;
+    background-position:
+      -315px 0,
+      0 0,
+      0px 190px,
+      50px 195px;
+    animation: loading 1.5s infinite;
+  }
+
+  :root {
+    cursor: url("/cursor.png");
+    --aw-font-sans: "Inter Variable";
+    --aw-font-serif: var(--aw-font-sans);
+    --aw-font-heading: var(--aw-font-sans);
+
+    --aw-color-primary: rgb(30 64 175);
+    --aw-color-secondary: rgb(30 58 138);
+    --aw-color-accent: rgb(109 40 217);
+
+    --aw-color-text-heading: rgb(0 0 0);
+    --aw-color-text-default: rgb(16 16 16);
+    --aw-color-text-muted: rgb(16 16 16 / 66%);
+    --aw-color-bg-page: rgb(255 255 255);
+
+    --aw-color-bg-page-dark: #020811;
+
+    /* --shadow: #43a047;
+  --scrollbarBG: #eee;
+  --thumbBG: #66bb6a; */
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+    box-shadow:
+      0 -100vh 0 100vh var(--shadow),
+      0 0 15px 5px black;
+  }
+
+  .dark {
+    cursor: url("/cursor.png");
+    --aw-font-sans: "Inter Variable";
+    --aw-font-serif: var(--aw-font-sans);
+    --aw-font-heading: var(--aw-font-sans);
+
+    --aw-color-primary: rgb(30 64 175);
+    --aw-color-secondary: rgb(30 58 138);
+    --aw-color-accent: rgb(109 40 217);
+
+    --aw-color-text-heading: rgb(0 0 0);
+    --aw-color-text-default: rgb(229 236 246);
+    --aw-color-text-muted: rgb(229 236 246 / 66%);
+    --aw-color-bg-page: var(--aw-color-bg-page-dark);
+  }
+
+  @property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+
+  .SearchChatCard {
+    /* background: transparent; */
+    width: var(--card-width);
+    height: var(--card-height);
+    /* padding: 1px; */
+    position: relative;
+    /* border-radius: 6px; */
+    /* justify-content: center;
+  align-items: center;
+  text-align: center; */
+    /* display: flex; */
+    /* font-size: 1.5em; */
+    color: rgb(88 199 250 / 0%);
+    /* cursor: pointer; */
+    /* font-family: cursive; */
+  }
+
+  .SearchChatCard:hover {
+    color: rgb(88 199 250 / 100%);
+    transition: color 1s;
+  }
+
+  .SearchChatCard::before {
+    content: "";
+    width: 100.5%;
+    height: 101%;
+    padding: 0px;
+    border-radius: 16px;
+    background-image: linear-gradient(
+      var(--rotate),
+      transparent,
+      transparent,
+      #94e8cd 43%,
+      #0b6e4f
+    );
+    position: absolute;
+    z-index: -1;
+    top: -0.5%;
+    left: -0.25%;
+    animation: searchChatSpin 2.5s linear infinite;
+  }
+
+  .SearchChatCard::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    /* height: 100%;
+  width: 100%; */
+    background: transparent;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate),
+      #5ddcff,
+      #3c67e3 43%,
+      #4e00c2
+    );
+    opacity: 1;
+    transition: opacity 0.5s;
+    animation: searchChatSpin 2.5s linear infinite;
+  }
+
+  @keyframes searchChatSpin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+
+  .SearchChatbox {
+    --border-size: 3px;
+    --border-angle: 0turn;
+    width: 60vmin;
+    height: 50vmin;
+    background-image: conic-gradient(
+        from var(--border-angle),
+        #213,
+        #112 50%,
+        #213
+      ),
+      conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+    background-size:
+      calc(100% - (var(--border-size) * 2))
+        calc(100% - (var(--border-size) * 2)),
+      cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    animation: bg-spin 3s linear infinite;
+    @keyframes bg-spin {
+      to {
+        --border-angle: 1turn;
+      }
+    }
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  @property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+  }
+
+  .typewriter {
+    color: #fff;
+    /* font-family: monospace; */
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: 0.15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0.15em; /* Adjust as needed */
+    animation:
+      typing 3.5s steps(30, end),
+      blink-caret 0.5s step-end infinite;
+  }
+
+  /* The typing effect */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange;
+    }
+  }
+
+  .blog {
+    animation: BlogGlow 5s ease-in-out infinite;
+    border-radius: 10px;
+  }
+
+  @keyframes BlogGlow {
+    from {
+      box-shadoww:
+        0px 0px 1px #fff,
+        0px 0px 1px #614ad3;
+    }
+    to {
+      box-shadow:
+        0px 0px 4px #fff,
+        0px 0px 4px #614ad3;
+    }
+  }
+</style>

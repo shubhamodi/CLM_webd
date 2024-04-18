@@ -1,0 +1,754 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { useState } from 'react';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import Cards from '~/components/chatapp/Cards.astro';
+import Recommendation from '~/components/chatapp/Recommendation.astro';
+import Marketing from '~/components/Marketing';
+import Chatapp from '~/components/chatapp/Chatapp';
+import CarouselSlider from '~/components/CarouselSlider';
+import { AiOutlineShop, AiOutlineShoppingCart, AiOutlineArrowRight } from 'react-icons/ai';
+import { TbBuildingEstate } from 'react-icons/tb';
+import { SiWeb3Dotjs } from 'react-icons/si';
+import { MdOutlineHealthAndSafety, MdOutlineCastForEducation } from 'react-icons/md';
+import { VscWorkspaceTrusted } from 'react-icons/vsc';
+import { GiMoneyStack } from 'react-icons/gi';
+import { BsBank, BsClipboard2Check } from 'react-icons/bs';
+
+// import ReactGA from 'react-ga';
+
+// onLoad={logPageView}
+const metadata = {
+  title: 'Blozum',
+  ignoreTitleTemplate: true,
+};
+---
+
+<style is:global>
+  /* .custom-scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(80, 133, 224, 0.869);
+    border-radius: 5px;
+  }
+
+  .custom-scroll::-webkit-scrollbar {
+    width: 0.3rem;
+    height: 0.3rem;
+  } */
+
+  .text_color {
+    background: linear-gradient(to right, #676872, #fff, #676872);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient_my {
+    background-color: conic-gradient(#314235, transparent, transparent, transparent, #314235);
+  }
+  .gradient_my_upside_down {
+    background-color: radial-gradient(140% 107.13% at 50% 10%, transparent 37.41%, #63e 69.27%, #fff 100%);
+  }
+
+  .footer_grad {
+    background: linear-gradient(179.86deg, hsla(0, 0%, 100%, 0.07) 0.12%, hsla(0, 0%, 100%, 0.03) 99.88%);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .parent {
+  border-color: #0b6e4f;
+  }
+
+  .child {
+  background-color: transparent;
+  }
+
+  .parent:hover {
+    transform: scale(1.05);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+
+  .parent:hover .child {
+    background-color: #0b6e4f;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+
+  .parent:hover .rotation{
+    transform: rotate(180deg);
+  }
+
+  
+</style>
+<!-- <link
+  rel="stylesheet"
+  type="text/css"
+  charset="UTF-8"
+  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+/> -->
+
+<!-- <script>
+  window.onload = function() {
+  document.getElementById("chatBox").scrollIntoView();
+};
+</script> -->
+
+<Layout metadata={metadata} class="relative">
+  <!-- Hero Widget ******************* -->
+  <div class="flex flex-col text_color m-8 text-center">
+  <div class="md:text-4xl text-2xl">
+    Elevate Your Website with Blozum's Advanced Features
+</div>
+
+<div class="py-8">
+    Experience a New Era of User Interaction and Engagement
+</div>
+</div>
+
+
+<div 
+style={{
+    background: "radial-gradient(140% 107.13% at 50% 10%,transparent 37.41%,#0b6e4f 69.27%,#fff 100%)",
+  }}
+class="grid md:grid-cols-3 grid-cols-1 md:p-24 p-8 py-16 rounded-[2.8rem] md:m-8">
+  <div class="col-span-2 flex flex-col text-4xl font-semibold text_color text-center">
+    GenAI Based Search-Chat
+  </div>
+
+  <div class="col-span-1 flex-col grid grid-cols-10">
+    <div class="col-span-1 relative flex-col">
+      <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+      <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+      </div>
+    </div>
+   <div class="col-span-9">
+    <h1 class="text-2xl text_color">
+        Precision in Search: 
+    </h1>
+
+    <span>
+        <ol>
+            <li class="py-4">
+                Search Powerhouse: Blozum's GenAI-driven search is engineered for precision and speed.
+            </li>
+            <li class="py-4">
+                Instantly Find What You Need: No more sifting through pages - find products, information, and services instantly with our AI-powered search
+            </li>
+        </ol>
+    </span>
+   </div>
+   
+
+   <div class="col-span-1 relative flex-col">
+    <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+    <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+    </div>
+  </div>
+   <div class="col-span-9">
+    <h1 class="text-2xl text_color">
+      Chat Expertise 
+    </h1>
+
+    <span>
+        <ol>
+            <li class="py-4">
+              Your 24/7 Virtual Assistant: Blozum's AI chatbot is at your users' service around the clock, providing expert guidance.
+            </li>
+            <li class="py-4">
+              Human-Like Conversations: Engage users with real-time, interactive chats that feel natural, courtesy of our AI chatbot.
+            </li>
+        </ol>
+    </span>
+   </div>
+
+
+   <div class="col-span-1 relative flex-col">
+    <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+    <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+    </div>
+  </div>
+   <div class="col-span-9">
+    <h1 class="text-2xl text_color">
+      The Perfect Duo 
+    </h1>
+
+    <span>
+        <ol>
+            <li class="py-4">
+              Search + Chat: Blozum seamlessly blends the precision of search with the conversational power of chat through our advanced AI technology.
+            </li>
+            <li class="py-4">
+              Personalized Guidance: Provide users with tailored recommendations, guiding them to the perfect choices using our AI chatbot
+            </li>
+        </ol>
+    </span>
+   </div>
+
+
+
+  </div>
+</div>
+
+
+
+
+<div 
+style={{
+    background: "radial-gradient(131.82% 109.9% at 50% 100%,transparent 37.41%,#0b6e4f 69.27%,#fff 100%)",
+  }}
+class="grid md:grid-cols-3 grid-cols-1 md:p-24 p-8 py-16 rounded-[2.8rem] md:m-8">
+  <div class="col-span-2 flex flex-col text-4xl font-semibold text_color text-center">
+    Context Awareness 
+  </div>
+
+  <div class="col-span-1 flex-col grid grid-cols-10">
+    <div class="col-span-1 relative flex-col">
+      <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+      <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+      </div>
+    </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Smart Conversations: Blozum uses multiple Language Models (LLMs) to ensure context-aware responses in every conversation."
+    </h1>
+   </div>
+   
+
+   <div class="col-span-1 relative flex-col">
+    <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+    <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+    </div>
+  </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Every Interaction Counts: Conversations adapt to your industry, providing the most relevant information using our multiple LLMs
+    </h1>
+   </div>
+
+
+  </div>
+
+
+  <div class="col-span-2 flex flex-col text-4xl font-semibold text_color text-center">
+    Tailored to You 
+  </div>
+
+  <div class="col-span-1 flex-col grid grid-cols-10">
+    <div class="col-span-1 relative flex-col">
+      <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+      <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+      </div>
+    </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Customized for You: Blozum tailors conversations to match user preferences and requirements, thanks to our multiple LLMs.
+    </h1>
+   </div>
+   
+
+   <div class="col-span-1 relative flex-col">
+    <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+    <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+    </div>
+  </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Dynamic Interactions: AI comprehends context, ensuring every conversation flows naturally using our multiple LLMs.
+    </h1>
+   </div>
+
+
+  </div>
+  
+</div>
+
+
+
+
+<div 
+style={{
+    background: "radial-gradient(140% 107.13% at 50% 10%,transparent 37.41%,#0b6e4f 69.27%,#fff 100%)",
+  }}
+  class="md:p-24 p-8 py-16 rounded-[2.8rem] md:m-8"
+>
+
+<div class="text_color md:text-6xl text-3xl font-semibold text-center my-16">
+  Voice Assistant Available
+</div>
+<div class="grid md:grid-cols-3 grid-cols-1">
+
+  <div class="col-span-2 flex flex-col text-4xl font-semibold text_color text-center">
+    Hands-Free Interaction 
+  </div>
+
+  <div class="col-span-1 flex-col grid grid-cols-10">
+    <div class="col-span-1 relative flex-col">
+      <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+      <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+      </div>
+    </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Voice Commands: Users can control Blozum using voice commands for a hands-free experience, enabled by our voice assistant feature.
+    </h1>
+   </div>
+   
+
+   <div class="col-span-1 relative flex-col">
+    <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+    <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+    </div>
+  </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Accessibility for All: Ensure your website is accessible to users with different abilities, with the help of our voice assistant feature.
+    </h1>
+   </div>
+
+
+  </div>
+
+
+  <div class="col-span-2 flex flex-col text-4xl font-semibold text_color text-center">
+    Effortless Engagement 
+  </div>
+
+  <div class="col-span-1 flex-col grid grid-cols-10">
+    <div class="col-span-1 relative flex-col">
+      <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+      <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+      </div>
+    </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Simplify Interactions: Users can effortlessly engage, search, and inquire through voice technology, made possible by our voice assistant.
+    </h1>
+   </div>
+   
+
+   <div class="col-span-1 relative flex-col">
+    <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+    <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+    </div>
+  </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Enhanced Convenience: Voice integration adds a new layer of ease to your website's user experience, offered through our voice assistant.
+    </h1>
+   </div>
+
+
+  </div>
+</div>
+</div>
+
+
+
+<div 
+style={{
+    background: "radial-gradient(131.82% 109.9% at 50% 100%,transparent 37.41%,#0b6e4f 69.27%,#fff 100%)",
+  }}
+  class="md:p-24 p-8 py-16 rounded-[2.8rem] md:m-8"
+>
+
+<div class="text_color md:text-6xl text-3xl font-semibold text-center my-16">
+  90 Languages Supported
+</div>
+<div class="grid md:grid-cols-3 grid-cols-1">
+
+  <div class="col-span-2 flex flex-col text-4xl font-semibold text_color text-center">
+    Global Reach 
+  </div>
+
+  <div class="col-span-1 flex-col grid grid-cols-10">
+    <div class="col-span-1 relative flex-col">
+      <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+      <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+      </div>
+    </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Connect Globally: Blozum supports an impressive 90 languages, connecting you to diverse audiences worldwide, enhancing global reach    </h1>
+   </div>
+   
+
+   <div class="col-span-1 relative flex-col">
+    <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+    <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+    </div>
+  </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Global Inclusivity: Serve users in their preferred language, fostering a sense of belonging with our multilingual support.
+    </h1>
+   </div>
+
+
+  </div>
+
+
+  <div class="col-span-2 flex flex-col text-4xl font-semibold text_color text-center">
+    Expanding Horizons 
+  </div>
+
+  <div class="col-span-1 flex-col grid grid-cols-10">
+    <div class="col-span-1 relative flex-col">
+      <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+      <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+      </div>
+    </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Explore New Markets: Effortlessly reach new markets and audiences with multilingual support, expanding your horizons
+    </h1>
+   </div>
+   
+
+   <div class="col-span-1 relative flex-col">
+    <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+    <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+    </div>
+  </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Multilingual Advantage: Expand your global presence and diversify your user base with our multilingual support.
+    </h1>
+   </div>
+
+
+  </div>
+</div>
+</div>
+
+
+ 
+
+<div 
+style={{
+    background: "radial-gradient(140% 107.13% at 50% 10%,transparent 37.41%,#0b6e4f 69.27%,#fff 100%)",
+  }}
+  class="md:p-24 p-8 py-16 rounded-[2.8rem] md:m-8"
+>
+
+<div class="text_color md:text-6xl text-3xl font-semibold text-center my-16">
+  Instant CRM and Inventory Integration
+</div>
+<div class="grid md:grid-cols-3 grid-cols-1">
+
+  <div class="col-span-2 flex flex-col text-4xl font-semibold text_color text-center">
+    Operational Efficiency 
+  </div>
+
+  <div class="col-span-1 flex-col grid grid-cols-10">
+    <div class="col-span-1 relative flex-col">
+      <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+      <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+      </div>
+    </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Real-Time Updates: Blozum connects seamlessly to your CRM and inventory systems for instant updates, boosting operational efficiency.
+      </h1>
+   </div>
+   
+
+   <div class="col-span-1 relative flex-col">
+    <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+    <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+    </div>
+  </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Customer Support on Steroids: Access customer data and purchase history for personalized assistance through our integrated CRM system
+    </h1>
+   </div>
+
+
+  </div>
+
+
+  <div class="col-span-2 flex flex-col text-4xl font-semibold text_color text-center">
+    Streamlined Inventory Management
+  </div>
+
+  <div class="col-span-1 flex-col grid grid-cols-10">
+    <div class="col-span-1 relative flex-col">
+      <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+      <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+      </div>
+    </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Optimize Inventory: Ensure product availability and streamline inventory management with ease, thanks to our seamless integration with inventory systems.
+    </h1>
+   </div>
+   
+
+   <div class="col-span-1 relative flex-col">
+    <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+    <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+    </div>
+  </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Enhanced Efficiency: Save time and resources with Blozum's effortless backend integration, streamlining inventory management.
+    </h1>
+   </div>
+
+
+  </div>
+</div>
+</div>
+
+
+
+  <!-- chatBox -->
+
+<!-- style={{
+          background: 'radial-gradient(128.5% 107.13% at 50% 2.92%, transparent 37.41%, #0b6e4f 78.65%, #fff 100%)',
+        }} -->
+    
+<!-- <div 
+style={{
+    background: "radial-gradienradial-gradient(131.82% 109.9% at 50% 100%,transparent 37.41%,#63e 69.27%,#fff 100%)",
+  }}
+  class="md:p-24 p-8 py-16 rounded-[2.8rem] md:m-8"
+>
+
+<div class="text_color md:text-6xl text-3xl font-semibold text-center my-16">
+  Instant CRM and Inventory Integration
+</div>
+<div class="grid md:grid-cols-3 grid-cols-1">
+
+  <div class="col-span-2 flex flex-col text-4xl font-semibold text_color text-center">
+    Operational Efficiency 
+  </div>
+
+  <div class="col-span-1 flex-col grid grid-cols-10">
+    <div class="col-span-1 relative flex-col">
+      <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+      <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+      </div>
+    </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Real-Time Updates: Blozum connects seamlessly to your CRM and inventory systems for instant updates, boosting operational efficiency.
+      </h1>
+   </div>
+   
+
+   <div class="col-span-1 relative flex-col">
+    <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+    <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+    </div>
+  </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Customer Support on Steroids: Access customer data and purchase history for personalized assistance through our integrated CRM system
+    </h1>
+   </div>
+
+
+  </div>
+
+
+  <div class="col-span-2 flex flex-col text-4xl font-semibold text_color text-center">
+    Streamlined Inventory Management
+  </div>
+
+  <div class="col-span-1 flex-col grid grid-cols-10">
+    <div class="col-span-1 relative flex-col">
+      <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+      <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+      </div>
+    </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Optimize Inventory: Ensure product availability and streamline inventory management with ease, thanks to our seamless integration with inventory systems.
+    </h1>
+   </div>
+   
+
+   <div class="col-span-1 relative flex-col">
+    <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+    <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+    </div>
+  </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Enhanced Efficiency: Save time and resources with Blozum's effortless backend integration, streamlining inventory management.
+    </h1>
+   </div>
+
+
+  </div>
+</div>
+</div> -->
+
+
+
+
+<div 
+style={{
+    background: "radial-gradient(131.82% 109.9% at 50% 100%,transparent 37.41%,#0b6e4f 69.27%,#fff 100%)",
+  }}
+  class="md:p-24 p-8 py-16 rounded-[2.8rem] md:m-8"
+>
+
+<div class="text_color md:text-6xl text-3xl font-semibold text-center my-16">
+  Salesperson Experience
+</div>
+<div class="grid md:grid-cols-3 grid-cols-1">
+
+  <div class="col-span-2 flex flex-col text-4xl font-semibold text_color text-center">
+    Guided Shopping 
+  </div>
+
+  <div class="col-span-1 flex-col grid grid-cols-10">
+    <div class="col-span-1 relative flex-col">
+      <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+      <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+      </div>
+    </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      In-Store Sales Experience: Blozum replicates the support of an in-store salesperson, guiding users through their journey for a personalized shopping experience
+      </h1>
+   </div>
+   
+
+   <div class="col-span-1 relative flex-col">
+    <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+    <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+    </div>
+  </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Personal Touch: Suggest products based on user preferences, just like an expert sales associate, enhancing the shopping experience.
+    </h1>
+   </div>
+
+
+  </div>
+
+
+  <div class="col-span-2 flex flex-col text-4xl font-semibold text_color text-center">
+    Boosting Sales
+  </div>
+
+  <div class="col-span-1 flex-col grid grid-cols-10">
+    <div class="col-span-1 relative flex-col">
+      <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+      <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+      </div>
+    </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Increase Conversions: Blozum's attentive, sales-oriented conversations boost conversion rates and customer satisfaction, ultimately enhancing sales.
+    </h1>
+   </div>
+   
+
+   <div class="col-span-1 relative flex-col">
+    <div class="rounded-full w-[10px] h-[10px] bg-[#676872] mx-auto absolute top-3 left-0 right-0"></div>
+
+    <div class="h-[90%] w-[1px] bg-[#676872] opacity-50 mx-auto absolute top-3 left-0 right-0">
+
+    </div>
+  </div>
+   <div class="col-span-9">
+    <h1 class="py-4">
+      Elevate Your E-commerce: Turn browsers into buyers with Blozum's interactive, personalized approach, boosting overall e-commerce sales.
+    </h1>
+   </div>
+
+
+  </div>
+</div>
+</div>
+
+
+<div class="md:w-fit w-full mx-auto my-16 justify-center">
+  <div class="text_color md:text-3xl text-2xl my-8">
+    Experience Blozum's features in action today
+  </div>
+  <div class="mx-auto my-8 md:w-fit w-full">
+  
+  <button class="bg-[#0b6e4f] rounded-full p-4 mx-auto font-semibold">
+    <a class="mx-auto" href="https://app.blozum.com/trynow">
+      Try a Demo
+    </a>
+  </button>
+
+</div>
+</div>
+  <!-- chatBox ends here -->
+
+  
+</Layout>

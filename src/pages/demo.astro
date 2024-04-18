@@ -1,0 +1,39 @@
+<!-- ---
+import Scraping from '~/components/Scraping';
+import SignIn from '~/components/signin'
+import FAQs from '~/components/widgets/FAQs.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/Layout.astro';
+import { persistentAtom } from '@nanostores/persistent'
+
+
+const metadata = {
+  title: 'Demo - Blozum',
+  ignoreTitleTemplate: true,
+};
+
+
+---
+
+
+
+   <script>
+      import { handleSign } from '~/lib/appwrite';
+    </script> 
+    
+    <Layout metadata={metadata}>
+   
+      
+      <Hero>
+      <Fragment slot="title">
+          Let us find best suited ChatBot for you
+      </Fragment>
+      <Fragment slot="subtitle">
+        Drop your website's link below
+      </Fragment>
+  </Hero>
+  <div>
+ <Scraping client:load/> 
+  <SignIn client:load/>
+</div>
+    </Layout> -->

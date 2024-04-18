@@ -1,0 +1,363 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+import ContactUs from '~/components/widgets/Contact.astro';
+import Logo from "~/components/Logo.astro";
+import ToggleTheme from "~/components/common/ToggleTheme.astro";
+import ToggleMenu from "~/components/common/ToggleMenu.astro";
+import Button from "~/components/ui/Button.astro"
+import {GrApps} from 'react-icons/gr';
+import { getHomePermalink } from "~/utils/permalinks";
+import { trimSlash, getAsset, getPermalink } from "~/utils/permalinks";
+import type { CallToAction } from "~/types";
+import { handleProductHover } from '~/navigation'; 
+import { useState } from "react";
+
+// import {ReactComponent} from "~/components/ReactComponent";
+
+interface Link {
+  text?: string;
+  href?: string;
+  ariaLabel?: string;
+  icon?: string;
+  logo?: string;
+}
+
+interface ActionLink extends CallToAction {}
+
+interface MenuLink extends Link {
+  links?: Array<MenuLink>;
+    // options?: Array<MenuLink>;
+}
+
+export interface Props {
+  id?: string;
+  links?: Array<MenuLink>;
+  actions?: Array<ActionLink>;
+  isSticky?: boolean;
+  isDark?: boolean;
+  isFullWidth?: boolean;
+  showToggleTheme?: boolean;
+  showRssFeed?: boolean;
+  position?: string;
+  distanceScrolled?: number;
+  // options?: Array<MenuLink>;
+}
+
+const {
+  id = "header",
+  links = [],
+  actions = [],
+  isSticky = false,
+  isDark = true,
+  isFullWidth = false,
+  showToggleTheme = false,
+  showRssFeed = false,
+  position = "center",
+} = Astro.props;
+
+// var {distanceScrolled = 0, } = Astro.props;
+
+const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`
+
+function escapeHTML(input: string) {
+  return input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+---
+<style>
+  #childHover > div {
+    visibility: hidden;
+  }
+
+  #parentHover > li[data-index]:hover ~ #childHover > div[data-index] {
+    visibility: visible;
+  }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+  z-index: 5000;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: rgba(1,3,20,0.9);
+  top: 0;
+  margin: 20px auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  border-radius: 20px; 
+}
+@media only screen and (max-width: 660px) {
+  .modal-content {
+    width: 90%;
+  }
+}
+
+</style>
+
+<script>  
+
+    //   var li = document.createElement('li');
+    //   li.classList.add('py-1', 'px-1', 'cursor-pointer', 'transition-all', 'duration-300', 'ease-out');
+    // li.style.opacity = '1';
+    // li.style.transform = 'scale(1)';
+    // li.style.display = 'flex';
+
+      
+      // Create a new anchor (a) element
+      // var a = document.createElement('a');
+      // a.textContent = 'Request a demo';
+      // a.id ="openModalBtn";
+      // a.classList.add('my-auto', 'h-[2rem]', 'px-2', 'py-0', 'flex', 'items-center', 'bg-white', 'rounded-[1.8rem]', 'text-[#050B1A]', 'mx-1', 'py-2', 'font-bold', 'cursor-pointer')
+
+
+      // // Append the anchor element to the li element
+      // li.appendChild(a);
+
+      // var ul = document.getElementById('lists');
+
+      // ul?.appendChild(li);
+
+    
+</script>
+
+
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var modal = document.getElementById("myModal");
+  var btn = document.getElementById("openModalBtn");
+
+  if (btn) {
+    btn.onclick = function() {
+      modal!.style.display = "block";
+    }
+  } else {
+    console.error("Button element not found");
+  }
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal!.style.display = "none";
+    }
+  }
+});
+</script>
+<style>
+  /* Add styles for the modal backdrop */
+  #calendlyModal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none; /* hide by default */
+    justify-content: center;
+    align-items: center;
+  }
+  #calendlyModal .calendly-inline-widget {
+    margin: auto;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+</style>
+
+
+<header
+  class:list={[
+    { sticky: isSticky, relative: !isSticky, dark: !isDark },
+    "top-0 z-40 bg-transparent flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ",
+  ]}
+  {...id ? { id } : {}}
+>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+  <!-- <div class="absolute inset-0"></div> -->
+  <div
+    class:list={[
+      "relative text-white md:py-3 py-0 px-3 md:px-6 mx-auto w-full md:flex md:justify-between",
+      {
+        "max-w-7xl": !isFullWidth,
+      },
+    ]}
+  >
+    <div class:list={[{ "bg-transparent mr-auto rtl:mr-0 rtl:ml-auto": position === "right" }, " flex justify-between"]}>
+      <a class="flex items-center" href={getHomePermalink()}>
+        <Logo />
+      </a>
+      <div class="flex items-center md:hidden right-0">
+        <ToggleMenu />
+      </div>
+    </div>
+    <!-- absolute mx-auto left-0 right-0 justify-center -->
+    
+    <nav
+      class=" w-full md:w-auto items-center text-sm py-1  hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:mx-5"
+      aria-label="Main navigation"
+    >
+    
+      <ul
+      id="lists"
+      style={{
+       ' border-radius': '1.6rem',
+'background': '#eee',
+'border': '1px solid #aaaeae',
+      }}
+        class="flex flex-col  md:flex-row md:self-center w-full md:w-auto  tracking-[0.01rem] font-medium shadow-md"
+      >
+      <li>
+          <img src="/BLZ.svg" class="w-[30px] mr-4 rounded-3xl m-2 border-none" />
+      </li>
+        {
+          links.map(({ text, href, links }, index) => (
+            <li class={links?.length ? "dropdown" : ""}>
+              {links?.length ? (
+                <>
+                  <button class={`my-auto h-full px-4 py-0 flex items-center ${(href===currentPath) ? "text-white  bg-[#eee] rounded-full m-1 p-0" : "dark:hover:text-white hover:text-link"}`}>
+                    {text!.charAt(0).toUpperCase() + text?.slice(1)}
+                  </button>
+                  <ul class="p-2 rounded-2xl dropdown-menu md:absolute md:hidden font-medium md:min-w-[200px] drop-shadow-xl">
+                    <div class="flex flex-col md:flex-row">
+                    <div id="" class={`${(links.length > 0) ? "" : "hidden" } w-full flex flex-col md:flex-row justify-between`}>
+                      {links.map(({ text: text2, href: href2 }, index) => (
+                      <div class="flex flex-col w-full">
+                     {text2 && <li class="text-center" data-index={index}>
+                        <a
+                          class:list={[
+                            "flex pl-0 rounded-2xl text-white  hover:text-link  py-2 px-5 block whitespace-no-wrap",
+                            { "aw-link-active " : href2 === currentPath}
+                          ]}
+                          href={href2}
+                          set:html={text2 + "buk"}
+                        >
+                          
+                        </a>
+                       
+                      </li>}
+
+                      {links.length> 0 ? <div class="flex md:flex-row flex-col w-full">
+                    { [links[index]].map(({ links: links2 }, index) => (
+                      <div data-index={index} id="childHover" class="grid grid-cols-1 gap-2 bg-[#eee] rounded-2xl w-full py-2 md:px-2 px-8">{links2?.map(({text: text2, href: href2, logo: logo2}) => (
+                      <li class="text-center">
+                        <a
+                          class:list={[
+                            "flex pl-0 rounded-2xl text-sm font-semibold text-center text-white  hover:dark:text-[#0b6e4f] hover:text-link dark:hover:text-white dark:hover:bg-white py-2 px-5 block whitespace-no-wrap",
+                            { "aw-link-active " : href2 === currentPath}
+                          ]}
+                          href={href2}
+                          // set:html=
+                        >
+                     {text2!.charAt(0).toUpperCase() + text2?.slice(1)}
+                        </a>
+                      </li>
+                      ))
+                      
+                      }</div>
+                    ))}</div> : null}
+
+                      </div>
+                    ))}
+                  </div>               
+                  </div>
+                    
+                  </ul>
+                </>
+              ) : (
+           text === "Request a Demo" ? (
+                  <>
+                  <div class="flex flex-row items-center align-center" style={{color: "#fff"}}>
+                    <a
+            class:list={[ 
+              "px-4 py-2 flex items-center bg-[#1D202A] h-[2rem] my-1.5 font-bold mx-1 cursor-pointer ease-out transition-all duration-300 rounded-[1.8rem]"
+            ]}
+            id="openModalBtn"
+          > 
+            {text?.charAt(0).toUpperCase() + text?.slice(1)}
+          </a>
+          </div>
+          </>
+        ):(
+          <a
+            class:list={[
+              "hover:text-link dark:hover:text-white px-4 py-3 flex items-centers",
+              { "aw-link-active": href === currentPath },
+            ]}
+            href={href}
+          > 
+            {text!.charAt(0).toUpperCase() + text?.slice(1)}
+          </a>
+        )
+      )}
+            </li>
+            
+          ))
+        }
+      </ul>
+    </nav>
+    <div
+      class:list={[
+        { "ml-auto rtl:ml-0 rtl:mr-auto": position === "left" },
+        "hidden md:self-center flex md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0",
+      ]}
+    >
+      <div class="items-center flex justify-between w-full md:w-auto">
+        {
+          actions?.length ? (
+            <span class="ml-4 rtl:ml-0 rtl:mr-4">
+              {actions.map((btnProps) => (
+                <Button {...btnProps} class="ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto"/>
+              ))}
+            </span>
+          ) : (
+            ""
+          )
+        }
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+      <ContactUs
+    title="Drop us a message today!"
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+        required: true,
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+        required: true,
+      },
+      {
+        type: 'number',
+        name: 'number',
+        label: 'Mobile Number',
+        required: false,
+      },
+    ]}
+    textarea={{
+      label: 'Anything you want us to know?',
+    }}
+    description="We respond within 24-48 hours. Guaranteed."
+  />
+  </div>
+</div>
