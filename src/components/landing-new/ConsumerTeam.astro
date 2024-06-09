@@ -1,0 +1,49 @@
+---
+import ConsumerTeamCard from "../widgets/ConsumerTeamCard.astro"
+const teams = [
+{
+        title : "In-House Legal",
+        desc : "Leverage AI to enforce standards and secure the best terms effortlessly.",
+        image: "/team-1.jpeg",
+        link: "/legal"
+    },{
+        title : "Procurement",
+        desc : "Speed up supplier onboarding and ensure compliance with intelligent insights.",
+        image: "/team-3.jpeg",
+        link: "/"
+    },{
+        title : "Sales",
+        desc : "Collaborate seamlessly with legal to accelerate deal closures and improve accuracy.",
+        image: "/team-4.jpeg",
+        link: "/"
+    },{
+        title : "Commercial and Finance",
+        desc : "Automate and optimize every aspect of contract management for finance teams",
+        image: "/team-5.jpeg",
+        link: "/"
+    },{
+        title : "Tendering Teams",
+        desc : "From Technical components, BOQs to risks - this CLM helps tendering teams do it all",
+        image: "/team-2.jpeg",
+        link: "/"
+    },
+]
+---
+
+<section>
+    <div class="w-11/12 max-w-7xl mx-auto flex mt-[500px] gap-12 font-light flex-col">
+        <div class="flex flex-col md:flex-row gap-8 md:gap-32 text-[#f5f6f6]">
+            <div class="flex-1 text-3xl md:text-5xl">Advanced CLM for Every Department</div>
+            <div class="flex-1 text-lg font-extralight">Unite your teams with a high-tech platform designed to automate, streamline, and secure your contract management processes.</div>
+        </div>
+        <div class="flex items-center md:items-stretch flex-col md:flex-row gap-6">
+            {
+                teams.map((team, index) => (
+                    <div class="flex flex-row" key={index}>
+                        <ConsumerTeamCard team={team}/>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+ </section>

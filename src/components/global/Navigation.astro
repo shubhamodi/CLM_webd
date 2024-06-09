@@ -1,11 +1,53 @@
-<section class="bg-white border-b border-black/5">
-  <div class="w-full mx-auto md:px-12 px-8 max-w-7xl lg:px-16">
+---
+
+---
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.getElementById("navbar");
+
+    if (navbar) {
+      // Check if the navbar element actually exists
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 40) {
+          navbar.style.backgroundColor = "#0b1821"; // Change to black when scroll is more than 20px
+        } else {
+          navbar.style.backgroundColor = "transparent"; // Change back to transparent when less than 20px
+        }
+      });
+    } else {
+      console.error("Navbar element not found");
+    }
+  });
+</script>
+<style>
+  .sticky-nav {
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top of other content */
+    /* background: #0b1821; Ensures the text doesn't blend with the page content when scrolling */
+    width: 100%;
+    transition: background-color 300ms;
+  }
+
+  .nav_b {
+    left: 50%;
+    transform: translate(-50%, 2%);
+  }
+
+  .nav_a:hover .nav_b {
+    display: flex;
+  }
+</style>
+
+<section id="navbar" class="border-b border-black/5 sticky-nav">
+  <div class="w-full mx-auto max-w-7xl">
     <div
       x-data="{ open: false }"
-      class="relative flex flex-col w-full py-5 mx-auto bg-white md:items-center md:justify-between md:flex-row md:px-6"
+      class="relative flex flex-col px-3 w-full py-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6"
     >
       <div class="flex flex-row items-center justify-between lg:justify-start">
-        <a href="/" class="text-black inline-flex items-center gap-3">
+        <a href="/" class="text-[#f5f6f6] inline-flex items-center gap-3">
           <svg
             class="h-4"
             viewBox="0 0 78 32"
@@ -25,7 +67,7 @@
               class="ccompli2"
               fill="#808CFF"></path>
           </svg>
-          <span class="font-bold font-display">Blozum</span>
+          <span class="font-bold font-display">ContraVault</span>
         </a>
         <button
           @click="open = !open"
@@ -58,43 +100,178 @@
         :class="{'flex': open, 'hidden': !open}"
         class="flex-col items-center flex-grow hidden md:pb-0 md:flex md:justify-end md:flex-row"
       >
-        <a
-          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400 lg:ml-auto"
-          href="/#features">Features</a
+        <div
+          class="px-2 nav_a relative lg:px-6 py-2 md:px-3 text-sm font-medium text-[#F5F6F6] hover:text-accent-400 lg:ml-auto"
         >
-        <a
-          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
-          href="/#pricing">Pricing</a
-        >
-
-        <a
-          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
-          href="/faq"
-        >
-          FAQ</a
-        >
-        <a
-          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
-          href="/blog"
-        >
-          Blogs</a
-        >
-
-        <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
-          <a
-            href="/signup"
-            class="block px-4 py-2 mt-2 text-sm font-medium text-black md:mt-0 hover:text-accent-400 focus:outline-none focus:shadow-outline"
+          <a href="/platform">Platform</a>
+          <div
+            class="absolute hidden nav_b gap-1 bg-[#b4cdd0] rounded-xl p-1 text-black"
           >
-            Sign up
-          </a>
-          <a
-            href="/login"
-            class="inline-flex items-center h-8 justify-center px-4 py-2 text-sm font-medium text-black bg-gray-100 rounded-lg group focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-gray-50 active:bg-gray-200 active:text-accent-400 focus-visible:outline-black"
+            <div class="flex gap-1 flex-col">
+              <a href="/store" class="px-4 flex items-center py-2">
+                <div>STORE</div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 sm:h-4 sm:w-4 ml-1 sm:ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+              <div
+                class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2"
+              >
+                Contract Extension
+              </div>
+              <div
+                class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2"
+              >
+                Intelligent Repository
+              </div>
+              <div
+                class="font-light text-nowrap bg-[#e7eff0] rounded-b-xl rounded-t-md px-4 py-2"
+              >
+                Conversational Speech
+              </div>
+            </div>
+            <div class="flex gap-1 flex-col">
+              <a href="/create" class="px-4 flex items-center py-2">
+                <div>CREATE</div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 sm:h-4 sm:w-4 ml-1 sm:ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+              <div
+                class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2"
+              >
+                Contract Extension
+              </div>
+              <div
+                class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2"
+              >
+                Intelligent Repository
+              </div>
+              <div
+                class="font-light text-nowrap bg-[#e7eff0] rounded-b-xl rounded-t-md px-4 py-2"
+              >
+                Conversational Speech
+              </div>
+            </div>
+            <div class="flex gap-1 flex-col">
+              <a href="/manage" class="px-4 flex items-center py-2">
+                <div>MANAGE</div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 sm:h-4 sm:w-4 ml-1 sm:ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+              <div
+                class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2"
+              >
+                Contract Extension
+              </div>
+              <div
+                class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2"
+              >
+                Intelligent Repository
+              </div>
+              <div
+                class="font-light text-nowrap bg-[#e7eff0] rounded-b-xl rounded-t-md px-4 py-2"
+              >
+                Conversational Speech
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="px-2 relative lg:px-6 nav_a py-2 md:px-3 text-sm font-medium text-[#F5F6F6] hover:text-accent-400"
+        >
+          <span>Solutions</span>
+          <div
+            class="absolute hidden nav_b gap-1 bg-[#b4cdd0] rounded-xl p-1 text-black"
           >
-            Log in
-          </a>
+            <div class="flex gap-1 flex-col">
+              <area
+                class="font-light text-nowrap bg-[#e7eff0] rounded-b-md rounded-t-xl px-4 py-2"
+              />
+              In-House Legal
+            </div>
+            <a class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2">
+              Legal Ops
+            </a>
+            <a class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2">
+              Procurement
+            </a>
+            <a class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2">
+              Sales
+            </a>
+            <a
+              class="font-light text-nowrap bg-[#e7eff0] rounded-b-xl rounded-t-md px-4 py-2"
+            >
+              Finance
+            </a>
+          </div>
         </div>
       </nav>
+
+      <a
+        class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-[#F5F6F6] hover:text-accent-400"
+        href="/#pricing">Pricing</a
+      >
+
+      <a
+        class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-[#F5F6F6] hover:text-accent-400"
+        href="/faq"
+      >
+        FAQ</a
+      >
+      <a
+        class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-[#F5F6F6] hover:text-accent-400"
+        href="/blog"
+      >
+        Blogs</a
+      >
+
+      <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
+        <a
+          href="/signup"
+          class="block px-4 py-2 mt-2 text-sm font-medium text-[#F5F6F6] md:mt-0 hover:text-accent-400 focus:outline-none focus:shadow-outline"
+        >
+          Sign up
+        </a>
+        <a
+          href="/login"
+          class="inline-flex items-center h-8 justify-center px-4 py-2 text-sm font-medium text-black bg-gray-100 rounded-lg group focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-gray-50 active:bg-gray-200 active:text-accent-400 focus-visible:outline-black"
+        >
+          Log in
+        </a>
+      </div>
     </div>
   </div>
 </section>

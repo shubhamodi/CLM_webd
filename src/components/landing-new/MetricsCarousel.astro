@@ -1,0 +1,62 @@
+---
+import MetricsCard from "../widgets/MetricsCard.astro"
+
+const metrics = [
+    {
+        value : 60,
+        title : "Faster Contract Reviews with AI Automation",
+        image : "https://images.unsplash.com/photo-1543269664-7eef42226a21?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA=="
+    },
+    {
+        value : 75,
+        title : "Reduced Contract Errors with Intelligent Analysis",
+        image : "https://images.unsplash.com/photo-1543269664-56d93c1b41a6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA=="
+    },
+    {
+        value : 50,
+        title : "Higher Compliance Rates with Real-Time Monitoring",
+        image : "https://images.unsplash.com/photo-1537511446984-935f663eb1f4?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA=="
+    },
+]
+---
+
+<script client:load>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.carousel2-slide');
+      let activeIndex = 0; // Active item index
+      slides[activeIndex].style.opacity = 1; // Make the first slide visible initially
+  
+      function nextSlide() {
+        slides[activeIndex].style.opacity = 0; // Hide the current slide
+        activeIndex = (activeIndex + 1) % slides.length; // Move to the next slide index
+        slides[activeIndex].style.opacity = 1; // Show the new slide
+      }
+  
+      // Automatically cycle through slides every 3 seconds
+      setInterval(nextSlide, 4000);
+    });
+  </script>
+
+<style>
+    .carousel2-slide {
+      transition: opacity 1s ease-in-out;
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+    }
+    .carousel2-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+
+<div class="relative w-11/12 max-w-7xl mx-auto mb-96 mt-32">
+    <div class="carousel2-container flex">
+        {metrics.map((metric, index) => (
+            <div class="carousel2-slide" key={index}>
+                <MetricsCard metric={metric}/>
+            </div>
+        ))}
+    </div>
+</div>

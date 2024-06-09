@@ -1,0 +1,67 @@
+---
+import TestimonyCard from "../widgets/TestimonyCard.astro";
+
+import testimonialbg1 from "../../assets/images/testimonial-1.jpg"
+import company1 from "../../assets/images/company-1.svg"
+import testimonialbg2 from "../../assets/images/testimonial-2.png"
+import company2 from "../../assets/images/company-2.svg"
+
+
+const testimonials = [
+    {
+        content : "As part of our contract digitization program, we didn’t want to stop at just putting our contracts in the cloud. We wanted complete visibility and control over the deliverables and obligations in our contracts. We found the perfect answer in ContraVault.",
+        signature : "Sabih Rozales, Principal Commercial Contract Manager",
+        company : "AMGEN",
+        logo : company1,
+        image : testimonialbg1
+    },
+    {
+        content : "Some of the biggest highlights of working with Contravault for me have been watching how the technology has changed over time. And how it gets better and better every single time new functionality is released.",
+        signature : "Toby Yu, Contract Management Services Leader",
+        company : "KPMG",
+        logo : company2,
+        image : testimonialbg2,
+    }
+]
+
+---
+<script client:load>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.carousel-slide');
+    let activeIndex = 0; // Active item index
+    slides[activeIndex].style.opacity = 1; // Make the first slide visible initially
+
+    function nextSlide() {
+      slides[activeIndex].style.opacity = 0; // Hide the current slide
+      activeIndex = (activeIndex + 1) % slides.length; // Move to the next slide index
+      slides[activeIndex].style.opacity = 1; // Show the new slide
+    }
+
+    // Automatically cycle through slides every 3 seconds
+    setInterval(nextSlide, 5000);
+  });
+</script>
+
+<style>
+  .carousel-slide {
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+  }
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<div class="relative w-11/12 max-w-7xl mx-auto mb-[700px] md:mb-96 mt-32">
+    <div class="carousel-container flex">
+        {testimonials.map((testimonial, index) => (
+            <div class="carousel-slide" key={index}>
+                <TestimonyCard testimonial={testimonial}/>
+            </div>
+        ))}
+    </div>
+</div>

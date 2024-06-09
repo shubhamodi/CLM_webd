@@ -1,18 +1,35 @@
 ---
+import Features from "~/components/landing-new/Features.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/landing/Hero.astro";
-import SectionOne from "../components/landing/SectionOne.astro";
-import SectionTwo from "../components/landing/SectionTwo.astro";
-import SectionThree from "../components/landing/SectionThree.astro";
+
+import Hero from "~/components/landing-new/Hero.astro";
+import SectionOne from "~/components/landing-new/SectionOne.astro";
+import Testimonials from "~/components/landing-new/Testimonials.astro";
+import MetricsCarousel from "~/components/landing-new/MetricsCarousel.astro";
+import ConsumerTeam from "~/components/landing-new/ConsumerTeam.astro";
+
+// import Hero from "../components/landing/Hero.astro";
+// import SectionOne from "../components/landing/SectionOne.astro";
+// import SectionTwo from "../components/landing/SectionTwo.astro";
+// import SectionThree from "../components/landing/SectionThree.astro";
 // import Testimonial from "../components/global/Testimonial.astro";
-import Pricing from "../components/landing/Pricing.astro";
+// import Pricing from "../components/landing/Pricing.astro";
 ---
 
 <BaseLayout>
-  <Hero />
-  <SectionOne />
-  <SectionTwo />
-  <SectionThree />
+  <!-- <Hero /> -->
+  <!-- <SectionOne /> -->
+  <!-- <SectionTwo /> -->
+  <!-- <SectionThree /> -->
   <!-- <Testimonial /> -->
-  <Pricing />
+  <!-- <Pricing /> -->
+
+
+  <Hero/>
+  <SectionOne/>
+  <Features/>
+  <Testimonials/>
+  <ConsumerTeam/>
+  <MetricsCarousel/>
+
 </BaseLayout>
