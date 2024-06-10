@@ -1,11 +1,12 @@
 ---
-import { Image } from "astro:assets";
-import homeFt1 from "../../assets/images/home-ft-1.png"
-import homeFt2 from "../../assets/images/home-ft-2.png"
-import homeFt3 from "../../assets/images/home-ft-3.png"
-import homeFt4 from "../../assets/images/home-ft-4.png"
-import homeFt5 from "../../assets/images/home-ft-5.png"
-import homeFt6 from "../../assets/images/home-ft-6.png"
+const homeFt1 = "/home-ft-1.png"
+const homeFt2 = "/home-ft-2.png"
+const homeFt3 = "/home-ft-3.png"
+const homeFt4 = "/home-ft-4.png"
+const homeFt5 = "/home-ft-5.png"
+const homeFt6 = "/home-ft-6.png"
+
+
 ---
 
 <style>
@@ -25,31 +26,31 @@ import homeFt6 from "../../assets/images/home-ft-6.png"
         <div class="flex flex-col md:flex-row gap-4 md:gap-8">
             <a href="/store" class="flex flex-col bg-[#e0e3fe] rounded-3xl gap-6 md:gap-6 p-4 md:p-8 card">
                 <div class="text-xl md:text-3xl">Store Contracts Intelligently</div>
-                <Image class="rounded-3xl" src={homeFt1} height={350} alt="home feature 1"/>
+                <img class="rounded-3xl" src={homeFt1} height={350} alt="home feature 1"/>
             </a>
             <a href="/conversational-search" class="flex flex-col bg-[#09434a] rounded-3xl p-4 md:p-8 gap-3 md:gap-6 card">
                 <div class="text-xl md:text-3xl text-[#f5f6f6]">Conversational Search</div>
-                <Image class="rounded-3xl" src={homeFt2} height={350} alt="home feature 2"/>
+                <img class="rounded-3xl" src={homeFt2} height={350} alt="home feature 2"/>
             </a>
         </div>
         <div class="flex flex-col md:flex-row gap-4 md:gap-8">
             <a href="/create" class="flex flex-col bg-[#b0b6fc] rounded-3xl gap-3 md:gap-6 p-4 md:p-8 card">
                 <div class="text-xl md:text-3xl">Create Airtight Contracts</div>
-                <Image class="rounded-3xl" src={homeFt3} height={350} alt="home feature 3"/>
+                <img class="rounded-3xl" src={homeFt3} height={350} alt="home feature 3"/>
             </a>
             <a href="/ai-contract-review" class="flex flex-col bg-[#083439] rounded-3xl p-4 md:p-8 gap-3 md:gap-6 card">
                 <div class="text-xl md:text-3xl text-[#f5f6f6]">AI Contract Review</div>
-                <Image class="rounded-3xl" src={homeFt4} height={350} alt="home feature 4"/>
+                <img class="rounded-3xl" src={homeFt4} height={350} alt="home feature 4"/>
             </a>
         </div>
         <div class="flex flex-col md:flex-row gap-4 md:gap-8">
             <a href="/manage" class="flex flex-col bg-[#97a0fb] rounded-3xl gap-3 md:gap-6 p-4 md:p-8 card">
                 <div class="text-xl md:text-3xl">Manage Contract Value</div>
-                <Image class="rounded-3xl" src={homeFt5} height={350} alt="home feature 5"/>
+                <img class="rounded-3xl" src={homeFt5} height={350} alt="home feature 5"/>
             </a>
             <a href="/ai-contract-redline" class="flex flex-col bg-[#05272c] rounded-3xl p-4 md:p-8 gap-3 md:gap-6 card">
                 <div class="text-xl md:text-3xl text-[#f5f6f6]">AI Contract Redline</div>
-                <Image class="rounded-3xl" src={homeFt6} height={350} alt="home feature 6"/>
+                <img class="rounded-3xl" src={homeFt6} height={350} alt="home feature 6"/>
             </a>
         </div>
     </div>

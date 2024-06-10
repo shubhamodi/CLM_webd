@@ -1,6 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import homeHero from "../../assets/images/hero-landing.jpeg";
+const homeHero = "/hero-landing.jpeg";
 import GetADemobutton from "../ui/GetADemobutton.astro";
 import ViewPlatformbutton from "../ui/ViewPlatformbutton.astro";
 
@@ -80,7 +79,7 @@ const letters2 = text2.split('');
             </div>
         </div>
         <div class="w-full max-w-7xl image-container">
-            <Image src={homeHero} class="rounded-3xl min-h-60 object-cover zoom-effect" alt="Homepage Hero Image"/>
+            <img src={homeHero} class="rounded-3xl min-h-60 object-cover zoom-effect" alt="Homepage Hero Image"/>
         </div>
     </div>
 </section>
