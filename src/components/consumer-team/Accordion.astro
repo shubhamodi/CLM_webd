@@ -1,0 +1,124 @@
+---
+const { challenges } = Astro.props;
+import { Image } from "astro:assets";
+---
+
+<style>
+    .tab input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+    }
+    .tab__content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+    .tab input:checked ~ .tab__content {
+        max-height: 100rem;
+    }
+
+    .tab input:checked + .tab__label {
+        border-bottom-left-radius: 0rem;
+        border-bottom-right-radius: 0rem;
+        transition-delay: 0s;
+        transition-duration: 0s;
+    }
+
+    /* Visual styles */
+    .accordion {
+        color: var(--theme);
+        border: 2px solid;
+        overflow: hidden;
+    }
+    .tab__label,
+    .tab__close {
+        display: flex;
+        color: white;
+        background: #09434a;
+        cursor: pointer;
+    }
+    .tab__label {
+        border-radius: 1rem;
+        justify-content: space-between;
+        transition-delay: 0.4s;
+        transition-duration: 0.1s;
+    }
+    .tab__label::after {
+        content: "\276F";
+        width: 1em;
+        height: 100%;
+        text-align: center;
+        transform: rotate(90deg);
+        transition: all 0.5s;
+    }
+    .tab input:checked + .tab__label::after {
+        transform: rotate(270deg);
+    }
+    .tab__content p {
+        margin: 0;
+        padding: 1rem;
+    }
+    .tab__close {
+        justify-content: flex-end;
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+    .accordion--radio {
+        --theme: var(--secondary);
+    }
+</style>
+
+<section>
+    <div class="w-11/12 flex flex-col mx-auto max-w-7xl gap-6 text-[#f5f6f6]">
+        <div class="text-3xl md:text-5xl font-light">Challenges & Solutions</div>
+        {
+            challenges.map((challenge, index) => (
+                <div class="tab">
+                    <input type="checkbox" name="accordion-1" id={index} />
+                    <label for={index} class="tab__label p-6 md:p-12">
+                        <div class="flex flex-col md:flex-row items-start gap-6 md:gap-16">
+                            <div class="text-base text-red-100 bg-red-800 bg-opacity-100 px-3 py-1 rounded-full">
+                                Challenge
+                            </div>
+                            <div class="text-2xl font-light">
+                                {challenge.title}
+                            </div>
+                        </div>
+                    </label>
+                    <div class="tab__content">
+                        <div class="flex flex-col w-full h-full">
+                            {/* <div class="flex flex-col md:flex-row w-full h-full bg-[#09434a] gap-6 md:gap-16 items-start p-6 md:p-12">
+                                <div class=" text-base opacity-0 hidden md:flex text-red-100 bg-red-800 bg-opacity-50 px-4 py-1 rounded-full">
+                                    Challenge
+                                </div>
+                                <div class=" text-xs text-red-100 border-red-100 border px-3 py-1 rounded-full">
+                                    Pain&nbsp;Point
+                                </div>
+                                <div class="text-lg font-extralight">
+                                    {challenge.pain_point}
+                                </div>
+                            </div> */}
+                            <div class="flex flex-col md:flex-row w-full h-full bg-[#083439] items-start p-6 gap-6 md:gap-16 md:p-12">
+                                <div class="text-base bg-[#f5f6f6] bg-opacity-100 text-black font-normal px-4 py-1 rounded-full">
+                                    Solution
+                                </div>
+                                <div class="flex flex-col gap-6 md:gap-12">
+                                    <div class="text-2xl font-light">
+                                        {challenge.solution}
+                                    </div>
+                                    <div class="text-lg font-extralight">
+                                        {challenge.solution_desc}
+                                    </div>
+                                    {/* <Image class="hidden md:block" src={challenge.image} alt={challenge.solution} height={300} width={800}/> */}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</section>

@@ -1,0 +1,53 @@
+---
+import Testimonials from "~/components/landing-new/Testimonials.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Hero from "~/components/consumer-team/Hero.astro";
+import Accordion from "~/components/consumer-team/Accordion.astro"
+
+const title = "Supercharge Your Sales with AI-Powered Contract Management";
+const desc =
+    "Equip your sales team with our advanced AI software. Streamline contract creation, accelerate deal closures, and ensure every contract is precise and compliant, enabling your team to focus on driving revenue and closing deals faster";
+const image = "/Create-Top-Banner.png";
+
+const challenges = [
+    {
+        title: "Lengthy Contract Drafting",
+        pain_point: "",
+        solution: "Automated Contract Drafting",
+        solution_desc: "Our AI automates the drafting process, providing customized, accurate contracts quickly, allowing your sales team to focus on closing deals.",
+        image: "/Create_Authoring.png"
+    },
+    {
+        title: "Inconsistent Contract Terms",
+        pain_point: "",
+        solution: "Standardized Contract Terms",
+        solution_desc: "The software ensures consistency across all contracts by using a standardized clause library, reducing discrepancies and enhancing contract reliability.",
+        image: "/Create_Authoring.png"
+    },
+    {
+        title: "Delayed Approvals",
+        pain_point: "",
+        solution: "Automated Approval Workflows",
+        solution_desc: "Our AI streamlines the approval process with automated workflows, significantly reducing the time required for contract sign-offs and accelerating deal closures.",
+        image: "/Create_Authoring.png"
+    },
+    {
+        title: "Tracking Contract Milestones",
+        pain_point: "",
+        solution: "Milestone Tracking and Alerts",
+        solution_desc: "With real-time tracking and alerts for key contract milestones, our software ensures your sales team never misses critical dates, keeping deals on track and clients satisfied.",
+        image: "/Create_Authoring.png"
+    }
+]
+
+
+
+
+---
+
+<BaseLayout>
+    <Hero title={title} desc={desc} image={image} />
+    <Accordion challenges = {challenges}/>
+    <Testimonials/>
+
+</BaseLayout>

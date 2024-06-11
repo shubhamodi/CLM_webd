@@ -1,0 +1,112 @@
+---
+import Hero from "~/components/features/Hero.astro";
+import Testimonials from "~/components/landing-new/Testimonials.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Metrics from "../components/features/Metrics.astro";
+import MetricsCarousel from "~/components/landing-new/MetricsCarousel.astro";
+import Features from "../components/features/Features.astro";
+
+const title = "Smart Analytics & Value Maximization";
+const desc =
+    "Unlock the full potential of your contracts with our AI-driven smart analytics. Gain valuable insights, maximize contract value, and make data-driven decisions to enhance your business outcomes.";
+const image = "/Create-Top-Banner.png";
+
+const metrics = [
+    {
+        value: "Actionable Intelligence",
+        title: "85% increase in actionable insights derived from contract data.",
+    },
+    {
+        value: "Maximized Value",
+        title: "90% improvement in contract value realization.",
+    },
+    {
+        value: "Accelerated Decisions",
+        title: "70% faster decision-making with real-time analytics.",
+    },
+];
+
+const features = [
+    {
+        title: "Comprehensive Data Analytics",
+        image: "/Create_Authoring.png",
+        desc: "Leverage AI to analyze your contracts comprehensively, providing deep insights that drive smarter business decisions.",
+        feature_highlights: [
+            "Contract Performance Metrics: Tracks and analyzes key performance indicators.",
+            "Trend Analysis: Identifies trends and patterns in contract data.",
+            "Predictive Analytics: Forecasts future contract performance based on historical data.",
+            "Benchmarking: Compares contract performance against industry benchmarks.",
+            "Customizable Reports: Generates tailored reports to meet specific needs.",
+            "Interactive Dashboards: Provides visual data representations for easy analysis."
+        ],
+        key_statistics: [
+            "Insight Generation: 85% increase in actionable insights from contract data.",
+            "Performance Tracking: 90% improvement in tracking contract performance metrics."
+        ]
+    },
+    {
+        title: "Value Maximization Strategies",
+        image: "/Create_Authoring.png",
+        desc: "Our AI identifies opportunities to maximize the value of your contracts, ensuring you get the most out of every agreement.",
+        feature_highlights: [
+            "Opportunity Identification: Recognizes potential areas for value enhancement.",
+            "Cost Savings Analysis: Identifies opportunities for cost reduction.",
+            "Revenue Optimization: Uncovers ways to increase contract-related revenue.",
+            "Risk-Reward Balancing: Assesses the balance of risks and rewards in contracts.",
+            "Negotiation Insights: Provides data-driven insights to improve negotiation outcomes.",
+            "Value Realization Tracking: Monitors the realization of identified value opportunities."
+        ],
+        key_statistics: [
+            "Value Enhancement: 90% improvement in contract value realization.",
+            "Cost Reduction: 80% increase in identified cost-saving opportunities."
+        ]
+    },
+    {
+        title: "Real-Time Analytics and Reporting",
+        image: "/Create_Authoring.png",
+        desc: "Stay ahead with real-time analytics and reporting, ensuring you have the latest data at your fingertips to make informed decisions.",
+        feature_highlights: [
+            "Real-Time Data Updates: Provides up-to-the-minute analytics on contract performance.",
+            "Customizable Dashboards: Tailors dashboards to show the most relevant metrics.",
+            "Alert System: Notifies you of significant changes and emerging trends.",
+            "Historical Data Analysis: Analyzes past data to inform future decisions.",
+            "Exportable Reports: Allows easy sharing and further analysis of data.",
+            "KPI Monitoring: Tracks key performance indicators in real-time."
+        ],
+        key_statistics: [
+            "Decision-Making Speed: 70% faster decision-making with real-time analytics.",
+            "Data Accuracy: 95% accuracy in real-time data reporting."
+        ]
+    },
+    {
+        title: "Predictive Insights and Recommendations",
+        image: "/Create_Authoring.png",
+        desc: "Utilize AI to predict future trends and provide recommendations, helping you stay proactive and ahead of the competition.",
+        feature_highlights: [
+            "Trend Forecasting: Predicts future trends based on historical data.",
+            "Risk Prediction: Anticipates potential risks before they arise.",
+            "Opportunity Forecasting: Identifies future opportunities for value maximization.",
+            "Actionable Recommendations: Provides specific, data-driven recommendations.",
+            "Scenario Analysis: Simulates different scenarios to predict outcomes.",
+            "Performance Improvement: Offers strategies to enhance contract performance."
+        ],
+        key_statistics: [
+            "Predictive Accuracy: 85% accuracy in predicting future trends.",
+            "Proactive Management: 80% increase in proactive contract management actions."
+        ]
+    }
+]
+
+---
+
+<BaseLayout>
+    <Hero title={title} desc={desc} image={image} />
+    <Metrics metrics={metrics} />
+    <Testimonials />
+    {
+        features.map((feature, index) => (
+            <Features feature = {feature}/>
+        ))
+    }
+    <MetricsCarousel />
+</BaseLayout>

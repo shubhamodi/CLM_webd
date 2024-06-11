@@ -15,7 +15,7 @@
           navbar.style.backgroundColor = "transparent"; // Change back to transparent when less than 20px
         }
       });
-    } else {
+    } else {~
       console.error("Navbar element not found");
     }
   });
@@ -40,7 +40,7 @@
   }
 </style>
 
-<section id="navbar" class="border-b border-black/5 sticky-nav">
+<section id="navbar" class="border-b backdrop-blur-xl border-black/5 sticky-nav">
   <div class="w-full mx-auto max-w-7xl">
     <div
       x-data="{ open: false }"
@@ -103,14 +103,14 @@
         <div
           class="px-2 nav_a relative lg:px-6 py-2 md:px-3 text-sm font-medium text-[#F5F6F6] hover:text-accent-400 lg:ml-auto"
         >
-          <a href="/platform">Platform</a>
+          <div>Platform</div>
           <div
             class="absolute hidden nav_b gap-1 bg-[#b4cdd0] rounded-xl p-1 text-black"
           >
             <div class="flex gap-1 flex-col">
               <!-- <a href="/store" class="px-4 flex items-center py-2"> -->
-                <a href="/" class="px-4 flex items-center py-2">
-                <div>STORE</div>
+              <a href="/ai-search" class="px-4 flex items-center py-2">
+                <div>SEARCH</div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-4 w-4 sm:h-4 sm:w-4 ml-1 sm:ml-2"
@@ -128,22 +128,22 @@
               <div
                 class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2"
               >
-                Contract Extension
+              Advanced Search Capabilities
               </div>
               <div
                 class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2"
               >
-                Intelligent Repository
+              Intelligent Document Categorization
               </div>
               <div
                 class="font-light text-nowrap bg-[#e7eff0] rounded-b-xl rounded-t-md px-4 py-2"
               >
-                Conversational Speech
+              AI Indexing
               </div>
             </div>
             <div class="flex gap-1 flex-col">
               <!-- <a href="/create" class="px-4 flex items-center py-2"> -->
-                <a href="/" class="px-4 flex items-center py-2">
+              <a href="/create" class="px-4 flex items-center py-2">
                 <div>CREATE</div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -162,22 +162,22 @@
               <div
                 class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2"
               >
-                Contract Extension
+              Intelligent Template Customization
               </div>
               <div
                 class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2"
               >
-                Intelligent Repository
+              Automated Clause Selection
               </div>
               <div
                 class="font-light text-nowrap bg-[#e7eff0] rounded-b-xl rounded-t-md px-4 py-2"
               >
-                Conversational Speech
+              Streamlined Collaboration
               </div>
             </div>
             <div class="flex gap-1 flex-col">
               <!-- <a href="/manage" class="px-4 flex items-center py-2"> -->
-                <a href="/" class="px-4 flex items-center py-2">
+              <a href="/manage" class="px-4 flex items-center py-2">
                 <div>MANAGE</div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -196,17 +196,17 @@
               <div
                 class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2"
               >
-                Contract Extension
+              Automated Workflow Creation
               </div>
               <div
                 class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2"
               >
-                Intelligent Repository
+              Seamless Collaboration
               </div>
               <div
                 class="font-light text-nowrap bg-[#e7eff0] rounded-b-xl rounded-t-md px-4 py-2"
               >
-                Conversational Speech
+              Integrated Task Management
               </div>
             </div>
           </div>
@@ -219,63 +219,73 @@
           <div
             class="absolute hidden nav_b gap-1 bg-[#b4cdd0] rounded-xl p-1 text-black"
           >
-            <div class="flex gap-1 flex-col">
-              <area
-                class="font-light text-nowrap bg-[#e7eff0] rounded-b-md rounded-t-xl px-4 py-2"
-              />
-              In-House Legal
+            <div class="h-auto flex flex-col gap-1">
+              <a
+                href="/legal"
+                class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2"
+              >
+                In-House Legal
+              </a>
+              <a
+                href="/procurement"
+                class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2"
+              >
+                Procurement
+              </a>
+              <a
+                href="/sales"
+                class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2"
+              >
+                Sales
+              </a>
+              <a
+                href="/commercial-finance"
+                class="font-light text-nowrap bg-[#e7eff0] rounded-b-xl rounded-t-md px-4 py-2"
+              >
+                Commercial and Finance
+              </a><a
+                href="/tendering-teams"
+                class="font-light text-nowrap bg-[#e7eff0] rounded-b-xl rounded-t-md px-4 py-2"
+              >
+                Tendering Teams
+              </a>
             </div>
-            <a href="/" class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2">
-              Legal Ops
-            </a>
-            <a href="/" class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2">
-              Procurement
-            </a>
-            <a href="/" class="font-light text-nowrap bg-[#e7eff0] rounded-md px-4 py-2">
-              Sales
-            </a>
-            <a
-              href="/"
-              class="font-light text-nowrap bg-[#e7eff0] rounded-b-xl rounded-t-md px-4 py-2"
-            >
-              Finance
-            </a>
           </div>
         </div>
+
+        <a
+          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-[#F5F6F6] hover:text-accent-400"
+          href="/pricing">Pricing</a
+        >
+
+        <a
+          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-[#F5F6F6] hover:text-accent-400"
+          href="/faq"
+        >
+          FAQ</a
+        >
+        <a
+          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-[#F5F6F6] hover:text-accent-400"
+          href="/blog"
+        >
+          Blogs</a
+        >
+
+        <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
+          <a
+            href="/signup"
+            class="block px-4 py-2 mt-2 text-sm font-medium text-[#F5F6F6] md:mt-0 hover:text-accent-400 focus:outline-none focus:shadow-outline"
+          >
+            Sign up
+          </a>
+          <a
+            href="/login"
+            class="inline-flex items-center h-8 justify-center px-4 py-2 text-sm font-medium text-black bg-gray-100 rounded-lg group focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-gray-50 active:bg-gray-200 active:text-accent-400 focus-visible:outline-black"
+          >
+            Log in
+          </a>
+        </div>
       </nav>
-
-      <a
-        class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-[#F5F6F6] hover:text-accent-400"
-        href="/">Pricing</a
-      >
-
-      <a
-        class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-[#F5F6F6] hover:text-accent-400"
-        href="/faq"
-      >
-        FAQ</a
-      >
-      <a
-        class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-[#F5F6F6] hover:text-accent-400"
-        href="/blog"
-      >
-        Blogs</a
-      >
-
-      <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
-        <a
-          href="/signup"
-          class="block px-4 py-2 mt-2 text-sm font-medium text-[#F5F6F6] md:mt-0 hover:text-accent-400 focus:outline-none focus:shadow-outline"
-        >
-          Sign up
-        </a>
-        <a
-          href="/login"
-          class="inline-flex items-center h-8 justify-center px-4 py-2 text-sm font-medium text-black bg-gray-100 rounded-lg group focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-gray-50 active:bg-gray-200 active:text-accent-400 focus-visible:outline-black"
-        >
-          Log in
-        </a>
-      </div>
     </div>
   </div>
 </section>

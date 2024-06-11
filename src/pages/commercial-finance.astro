@@ -1,0 +1,53 @@
+---
+import Testimonials from "~/components/landing-new/Testimonials.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Hero from "~/components/consumer-team/Hero.astro";
+import Accordion from "~/components/consumer-team/Accordion.astro"
+
+const title = "Optimize Your Commercial and Financial Operations";
+const desc =
+    "Streamline contract management for your commercial and finance teams with our AI-driven software. Enhance accuracy, expedite reviews, and ensure financial compliance, empowering your team to make informed decisions and drive business growth";
+const image = "/Create-Top-Banner.png";
+
+const challenges = [
+    {
+        title: "Complex Financial Clauses",
+        pain_point: "",
+        solution: "AI Simplifies Financial Clauses",
+        solution_desc: "Our AI simplifies complex financial clauses, providing clear insights and ensuring accurate interpretation, allowing your team to make better financial decisions.",
+        image: "/Create_Authoring.png"
+    },
+    {
+        title: "Ensuring Financial Compliance",
+        pain_point: "",
+        solution: "Continuous Financial Compliance Monitoring",
+        solution_desc: "The software continuously monitors and checks contracts for financial compliance, mitigating risks and ensuring adherence to regulatory standards.",
+        image: "/Create_Authoring.png"
+    },
+    {
+        title: "Lengthy Approval Processes",
+        pain_point: "",
+        solution: "Automated Approval Workflows",
+        solution_desc: "Our AI automates and streamlines the approval workflow, significantly reducing the time taken to finalize contracts and enhancing operational efficiency.",
+        image: "/Create_Authoring.png"
+    },
+    {
+        title: "Tracking Financial Obligations",
+        pain_point: "",
+        solution: "Real-Time Financial Obligations Tracking",
+        solution_desc: "With real-time tracking and notifications, our software ensures your team is always aware of upcoming financial obligations, preventing missed payments and penalties.",
+        image: "/Create_Authoring.png"
+    }
+]
+
+
+
+
+---
+
+<BaseLayout>
+    <Hero title={title} desc={desc} image={image} />
+    <Accordion challenges = {challenges}/>
+    <Testimonials/>
+
+</BaseLayout>

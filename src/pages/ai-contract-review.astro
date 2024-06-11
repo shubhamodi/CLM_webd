@@ -1,0 +1,95 @@
+---
+import Hero from "~/components/features/Hero.astro";
+import Testimonials from "~/components/landing-new/Testimonials.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Metrics from "../components/features/Metrics.astro";
+import MetricsCarousel from "~/components/landing-new/MetricsCarousel.astro";
+import Features from "../components/features/Features.astro";
+
+const title = "AI-Based Contract Review";
+const desc =
+    "Experience unparalleled efficiency with our AI-driven contract review. Uncover critical insights, highlight risks, track deadlines, and extract essential information instantly. Empower your business with precise, timely, and actionable data, ensuring every contract detail is meticulously handled for your success.";
+const image = "/Create-Top-Banner.png";
+
+const metrics = [
+    {
+        value: "90%",
+        title: "faster first drafts",
+    },
+    {
+        value: "80%",
+        title: "faster contract review",
+    },
+    {
+        value: "60%",
+        title: "faster contract redlining",
+    },
+];
+
+const features = [
+    {
+        title: "Smart Contract Reading",
+        image: "/Create_Authoring.png",
+        desc: "Our AI dives deep into every contract, extracting crucial insights and highlighting compliance issues, deadlines, and essential points to ensure nothing is missed.",
+        feature_highlights: [
+            "Insight Extraction: Identifies and summarizes key information and actionable items.",
+            "Compliance Check: Ensures adherence to relevant regulations and standards",
+            "Risk Detection: Highlights potential risks and liabilities.",
+            "Document Categorization: Organizes documents by type and priority.",
+            "Version Comparison: Tracks changes and highlights differences between contract versions.",
+            "Automated Summaries: Provides concise summaries of lengthy contracts.",
+        ],
+        key_statistics: [
+            "60% less time required to set up new playbooks",
+            "90% faster time-to-first draft",
+            "100% global compliance with contracting policies",
+        ],
+    },
+    {
+        title: "Advanced Search and Retrieval",
+        image: "/Create_Authoring.png",
+        desc: "Find the information you need quickly and efficiently with our AI-powered search and retrieval system.",
+        feature_highlights: [
+            "Keyword Search: Locates contracts and clauses using specific keywords.",
+            "Contextual Search: Understands the context to deliver more relevant results.",
+            "Metadata Filtering: Filters search results based on metadata such as dates, parties, and contract type.",
+            "Full-Text Search: Searches through the entire contract text for comprehensive results.",
+            "Saved Searches: Allows saving of frequent searches for quick access..",
+            "Interactive Dashboards: Provides a visual interface for exploring search results",
+        ],
+        key_statistics: [
+            "Search Efficiency: 90% faster retrieval of relevant documents",
+            "User Satisfaction: 85% increase in user satisfaction with search results",
+        ],
+    },
+    {
+        title: "Insights and Deadline Tracking",
+        image: "/Create_Authoring.png",
+        desc: "Gain crucial insights and stay ahead of deadlines with our AI-powered tracking system, ensuring you never miss an important date or detail.",
+        feature_highlights: [
+            "Deadline Alerts: Tracks and notifies of upcoming deadlines.",
+            "Milestone Tracking: Monitors contract milestones and key dates.",
+            "Compliance Reminders: Sends alerts for compliance and renewal dates.",
+            "Insight Dashboard: Provides a visual dashboard of key insights and deadlines.",
+            "Performance Metrics: Tracks contract performance against KPIs.",
+            "Custom Notifications: Tailored notifications based on your specific needs.",
+        ],
+        key_statistics: [
+            "Deadline Management: 90% improvement in meeting contractual deadlines.",
+            "Insight Accuracy: 85% increase in actionable insights derived from contracts."
+        ],
+    },
+];
+---
+
+<BaseLayout>
+    <Hero title={title} desc={desc} image={image} />
+    <Metrics metrics={metrics} />
+    <Testimonials />
+    {
+        features.map((feature, index) => (
+            <Features feature = {feature}/>
+        ))
+    }
+    <MetricsCarousel />
+</BaseLayout>

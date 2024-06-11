@@ -1,0 +1,52 @@
+---
+import Testimonials from "~/components/landing-new/Testimonials.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Hero from "~/components/consumer-team/Hero.astro";
+import Accordion from "~/components/consumer-team/Accordion.astro"
+
+const title = "Empower Your Legal Team with AI Precision";
+const desc =
+    "Elevate your in-house legal team's efficiency with our AI-powered contract management software. Instantly review, analyze, and draft contracts with unparalleled accuracy, reducing risks and freeing up time for strategic legal work";
+const image = "/Create-Top-Banner.png";
+
+const challenges = [
+    {
+        title: "Overwhelming Volume of Contracts",
+        pain_point: "",
+        solution: "AI Contract Review",
+        solution_desc: "Our AI swiftly reviews and analyzes large volumes of contracts, highlighting key points and risks, allowing your legal team to focus on high-value tasks.",
+        image: "/Create_Authoring.png"
+    },
+    {
+        title: "Identifying Compliance Issues",
+        pain_point: "",
+        solution: "Automated Compliance Checks",
+        solution_desc: "The software automatically checks for compliance with relevant regulations and standards, ensuring no compliance issue is overlooked.",
+        image: "/Create_Authoring.png"
+    },
+    {
+        title: "Manual Clause Comparison",
+        pain_point: "",
+        solution: "AI Clause Comparison",
+        solution_desc: "Our AI compares contract clauses against your standard library, instantly identifying deviations and suggesting appropriate adjustments.",
+        image: "/Create_Authoring.png"
+    },
+    {
+        title: "Managing Contract Deadlines",
+        pain_point: "",
+        solution: "Automated Deadline Alerts",
+        solution_desc: "With automated deadline tracking and alerts, our software ensures your team never misses an important date, enhancing contract management efficiency.",
+        image: "/Create_Authoring.png"
+    }
+]
+
+
+
+---
+
+<BaseLayout>
+    <Hero title={title} desc={desc} image={image} />
+    <Accordion challenges = {challenges}/>
+    <Testimonials/>
+
+</BaseLayout>
