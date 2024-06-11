@@ -21,9 +21,9 @@ import { Image } from "astro:assets";
                     {feature.desc}
                 </div>
                 <hr class="my-6 border-t-2 border-[#09434a]" />
-                <div class="flex gap-4 md:gap-0 flex-col md:flex-row w-full justify-between font-extralight">
+                <div class="flex gap-4 flex-col w-full justify-between ">
                     <div class="">Feature Highlights</div>
-                    <div class="flex w-full md:w-7/12 flex-col gap-4">
+                    <div class="flex w-full flex-col gap-4 font-extralight">
                         {
                             feature.feature_highlights.map(
                                 (highlight, index) => (
@@ -37,9 +37,9 @@ import { Image } from "astro:assets";
                     </div>
                 </div>
                 <hr class="my-6 border-t-2 border-[#09434a]" />
-                <div class="flex gap-4 md:gap-0 flex-col md:flex-row w-full justify-between font-extralight">
+                <div class="flex gap-4 flex-col w-full justify-between">
                     <div class="">Key Statistics</div>
-                    <div class="flex w-full md:w-7/12 flex-col gap-4">
+                    <div class="flex w-full flex-col gap-4 font-extralight">
                         {
                             feature.key_statistics.map(
                                 (statistic, index) => (
