@@ -1,6 +1,6 @@
 ---
 const {testimonial} = Astro.props
-import { Image } from "astro:assets";
+import { Image } from "astro:assets"
 import SeeAllCustomersbutton from "../../components/ui/SeeAllCustomersbutton.astro"
 ---
 
@@ -18,5 +18,5 @@ import SeeAllCustomersbutton from "../../components/ui/SeeAllCustomersbutton.ast
             <SeeAllCustomersbutton/>
         </div>
     </div>
-        <Image class="rounded-xl" src = {testimonial.image} alt = {testimonial.company} height={300}/>
+        <img class="rounded-xl max-h-72" src = {testimonial.image} alt = {testimonial.company}/>
 </div>
