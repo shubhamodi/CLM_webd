@@ -6,6 +6,7 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import BaseLayout from '~/layouts/BaseLayout.astro';
 
 const metadata = {
   title: 'Blozum Pricing - Affordable AI Solutions for Every Business',
@@ -14,7 +15,7 @@ const metadata = {
 };
 ---
 
-<Layout metadata={metadata}>
+<BaseLayout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
   <HeroText
@@ -308,4 +309,4 @@ const metadata = {
       },
     ]}
   /> -->
-</Layout>
+</BaseLayout>
