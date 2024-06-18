@@ -20,13 +20,13 @@ const letters2 = text2.split('');
     display: inline-block; /* or flex, depending on your layout */
   }
 
-  .zoom-effect {
+  /* .zoom-effect {
     width: 100%;
     height: 100%;
     transition: transform 0.5s ease-in-out;
-    transform: scale(1); /* Initial scale */
-    animation: zoomInOnLoad 3s ease-in-out forwards; /* Initial animation on load */
-  }
+    transform: scale(1);
+    animation: zoomInOnLoad 3s ease-in-out forwards;
+  } */
 
   @keyframes zoomInOnLoad {
     from { transform: scale(1); }
@@ -53,10 +53,10 @@ const letters2 = text2.split('');
 </style>
 
 <section class="relative custom-background">
-    <div class="w-11/12 mx-auto h-auto md:h-screen text-[#f5f6f6] font-light flex flex-col items-center justify-center gap-8 md:gap-24 ">
-        <div class="flex flex-col mt-48 md:flex-row gap-8 md:gap-48 w-full max-w-7xl md:mt-32">
+    <div class="w-11/12 mx-auto h-auto md:h-screen text-[#f5f6f6] font-light flex flex-col items-center justify-center gap-8 md:gap-36 ">
+        <div class="flex flex-col mt-48 md:flex-row gap-8 md:gap-48 w-full max-w-7xl md:mt-16">
             <div class="text-4xl md:text-7xl">
-                {letters1.map((letter, index) => (
+                <!-- {letters1.map((letter, index) => (
                     <span class="fade-in" style={{ '--animation-delay': `${index * 0.1}s` }}>
                         {letter === ' ' ? '\u00A0' : letter}
                     </span>
@@ -66,7 +66,8 @@ const letters2 = text2.split('');
                     <span class="fade-in" style={{ '--animation-delay': `${delay + (index * 0.1)}s` }}>
                         {letter === ' ' ? '\u00A0' : letter}
                     </span>
-                ))}
+                ))} -->
+                {text1} <br/> {text2}
             </div>
             <div class="text-xl md:text-xl flex flex-col justify-between">
                 <div>
