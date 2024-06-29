@@ -11,7 +11,7 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative bg-[#b4cdd0] mt-[77px] not-prose">
+<section class="relative text-[#f5f6f6] mt-[77px] not-prose">
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
@@ -19,20 +19,20 @@ const {
       <div class="text-center max-w-5xl mx-auto">
         {tagline && (
           <p
-            class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase"
+            class="text-base text-secondary font-bold tracking-wide uppercase"
             set:html={tagline}
           />
         )}
         {
           title && (
             <h1
-              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
               set:html={title}
             />
           )
         }
         <div class="max-w-3xl mx-auto">
-          {subtitle && <p class="text-xl text-muted mb-6 dark:text-slate-300" set:html={subtitle} />}
+          {subtitle && <p class="text-xl text-muted mb-6" set:html={subtitle} />}
           <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
             {
               callToAction && (
