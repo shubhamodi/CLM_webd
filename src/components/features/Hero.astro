@@ -4,9 +4,18 @@ import GetADemobutton from "../ui/GetADemobutton.astro";
 import { Image } from "astro:assets";
 ---
 
-<section class="relative custom-background">
+<style>
+  .custom-background {
+      background-image: url('/hero-dark-bg-3000.svg');
+      background-size: cover;
+      background-position: center;
+      box-shadow: inset 0 -130px 200px 0px #0b1821
+    }
+</style>
+
+<section class="relative pt-36 mb-12 md:pt-12 md:mb-12 custom-background">
     <div
-        class="w-11/12 mt-16 mx-auto h-screen md:h-screen text-[#f5f6f6] font-light flex flex-col items-center justify-center gap-8"
+        class="w-11/12 mx-auto md:h-screen text-[#f5f6f6] font-light flex flex-col items-center justify-center"
     >
         <div class="w-full max-w-7xl image-container">
             <div class="text-5xl md:text-7xl">
