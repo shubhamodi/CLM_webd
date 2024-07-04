@@ -48,6 +48,7 @@
     "clsx": "^2.1.0",
     "cx": "^24.4.7",
     "google-spreadsheet": "^4.1.1",
+    "googleapis": "^140.0.1",
     "he": "^1.2.0",
     "limax": "^4.1.0",
     "lodash.merge": "^4.6.2",
