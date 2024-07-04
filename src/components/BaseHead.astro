@@ -1,8 +1,10 @@
 ---
 import "../styles/global.css";
+//take title from the props and if not provided set it to "AI Driven Contract Lifecycle Management Software"
+const { title = "ContraVault" } = Astro.props;
 ---
 
-<title>ContraVault</title>
+<title>{title}</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
 <meta charset="UTF-8" />

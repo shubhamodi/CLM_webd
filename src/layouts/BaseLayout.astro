@@ -3,6 +3,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Navigation from "../components/global/Navigation.astro";
 import Footer from "../components/global/Footer.astro";
 
+const {title} = Astro.props
+
 ---
 
 <html
@@ -10,7 +12,7 @@ import Footer from "../components/global/Footer.astro";
   class="scroll-smooth selection:bg-accent-500 selection:text-white no-touchevents hydrated"
 >
   <head>
-    <BaseHead />
+    <BaseHead title={title}/>
   </head>
   <!-- <body class="bg-white flex flex-col min-h-svh"> -->
 
