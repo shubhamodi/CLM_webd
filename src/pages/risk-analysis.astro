@@ -1,0 +1,93 @@
+---
+import Hero from "~/components/features/Hero.astro";
+import Testimonials from "~/components/landing-new/Testimonials.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Metrics from "../components/features/Metrics.astro";
+import MetricsCarousel from "~/components/landing-new/MetricsCarousel.astro";
+import Features from "../components/features/Features.astro";
+
+const title = "Intelligent Risk Analysis";
+const desc = "Harness the power of AI to proactively assess and manage risks in your contracts. Our Intelligent Risk Analysis ensures you identify and mitigate potential issues before they become problems, safeguarding your business operations."
+const image = "https://images.unsplash.com/photo-1573164574048-f968d7ee9f20?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fG9mZmljZXxlbnwwfDB8MHx8fDI%3D";
+
+const metrics = [
+    {
+        value: "Rapid Risk Response",
+        title: "70% faster risk identification and mitigation compared to traditional methods",
+    },
+    {
+        value: "Precision in Peril",
+        title: "95% accuracy in detecting potential contractual risks.",
+    },
+    {
+        value: "Preventative Protection",
+        title: "80% reduction in risk-related incidents through proactive analysis.",
+    },
+];
+
+const features = [
+    {
+        title: "Instant Risk Pickup",
+        image: "https://images.unsplash.com/photo-1594732832278-abd644401426?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTd8fG9mZmljZXxlbnwwfDB8MHx8fDI%3D",
+        desc: "Our AI is pre-loaded with your company's compliance requirements, instantly comparing new documents to identify which compliances are met and which are not, ensuring immediate risk detection and management.",
+        feature_highlights: [
+            "Compliance Database: Stores and updates all relevant compliance requirements",
+            "Instant Comparison: Rapidly compares new documents against compliance standards",
+            "Non-Compliance Alerts: Notifies you immediately of any compliance breaches",
+            "Detailed Compliance Reports: Generates reports highlighting met and unmet compliance standards",
+            "Custom Compliance Rules: Allows customization of compliance checks based on your specific needs",
+            "Continuous Learning: AI adapts and updates based on new compliance regulations and company policies",
+        ],
+        key_statistics: [
+            "Immediate Alerts: 90% faster detection of compliance breaches",
+            "Compliance Assurance: 85% increase in compliance accuracy and adherence"
+        ],
+    },
+    {
+        title: "Automated Risk Scoring",
+        image: "https://images.unsplash.com/photo-1665686308827-eb62e4f6604d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        desc: "Our AI-driven system assigns risk levels to various contract components, enabling you to prioritize and address potential issues effectively.",
+        feature_highlights: [
+            "Dynamic Risk Assessment: Continuously evaluates and updates risk scores based on new data",
+            "Risk Categorization: Classifies risks into different categories for easier management",
+            "Impact Analysis: Assesses the potential impact of identified risks",
+            "Customizable Risk Metrics: Tailors risk scoring criteria to your business needs",
+            "Visualization Tools: Provides graphical representations of risk levels and trends",
+            "Historical Risk Data: Analyzes past contracts to predict future risks",
+        ],
+        key_statistics: [
+            "Risk Scoring Efficiency: 80% faster identification of high-risk contracts",
+            "Impact Analysis Accuracy: 90% precision in predicting potential impact of risks",
+        ],
+    },
+    {
+        title: "Predictive Risk Insights",
+        image: "https://images.unsplash.com/photo-1664575599618-8f6bd76fc670?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29ycG9yYXRlfGVufDB8MHwwfHx8Mg%3D%3D",
+        desc: "Redlining agreements has never been this easy or smart. Sirion’s AI helps you close deals faster than ever before while giving you the control and precision to effectively mitigate contract risk.",
+        feature_highlights: [
+            "Scenario Simulation: Runs simulations to predict possible risk scenarios",
+            "Predictive Analytics: Utilizes historical data to forecast future risks",
+            "Early Warning System: Alerts you to emerging risks in real-time",
+            "Risk Trend Analysis: Identifies patterns and trends in contract risks",
+            "Actionable Recommendations: Provides suggestions to mitigate predicted risks",
+            "Risk Heatmaps: Visualizes areas of high risk within contracts",
+        ],
+        key_statistics: [
+            "Forecast Accuracy: 85% accuracy in predicting potential risks",
+            "Proactive Measures: 75% increase in proactive risk mitigation actions",
+        ],
+    },
+];
+---
+
+<BaseLayout title="ContraVault - Risk Analysis">
+    <Hero title={title} desc={desc} image={image} />
+    <Metrics metrics={metrics} />
+    <!-- <Testimonials /> -->
+    {
+        features.map((feature, index) => (
+            <Features feature = {feature}/>
+        ))
+    }
+    <MetricsCarousel />
+</BaseLayout>

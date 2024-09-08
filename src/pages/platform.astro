@@ -1,0 +1,18 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Hero from "~/components/platform/Hero.astro"
+import Testimonials from "~/components/landing-new/Testimonials.astro";
+import PlatformComponents from "~/components/platform/PlatformComponents.astro"
+import Section from "~/components/platform/Section.astro"
+import MetricsCarousel from "~/components/landing-new/MetricsCarousel.astro";
+import Features from "~/components/platform/Features.astro";
+---
+
+<BaseLayout title="ContraVault - Platform Overview">
+    <Hero />
+    <PlatformComponents/>
+    <Features />
+    <!-- <Testimonials/> -->
+    <Section />
+    <MetricsCarousel/>
+</BaseLayout>

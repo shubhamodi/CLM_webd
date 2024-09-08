@@ -11,6 +11,7 @@ import { getCanonical, getPermalink } from "~/utils/permalinks";
 import { getStaticPathsBlogPost, blogPostRobots } from "~/utils/blog";
 import { findImage } from "~/utils/images";
 import type { MetaData } from "~/types";
+import BaseLayout from "~/layouts/BaseLayout.astro";
 // import RelatedPosts from "~/components/blog/RelatedPosts.astro";
 
 export const prerender = true;
@@ -60,7 +61,7 @@ const metadata = merge(
 ) as MetaData;
 ---
 
-<Layout metadata={metadata}>
+<BaseLayout metadata={metadata} title="ContraVault - Blog">
   <SinglePost post={{ ...post, image: image }} url={url}>
     {
       post.Content ? (
@@ -70,6 +71,6 @@ const metadata = merge(
       )
     }
   </SinglePost>
-  <ToBlogLink />
+  <ToBlogLink />x
   <!-- <RelatedPosts post={post} /> -->
-</Layout>
+</BaseLayout>

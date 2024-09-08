@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+---
+
+<style>
+    .custom-background {
+        background-image: url("/hero-dark-bg-3000.svg");
+        background-size: cover;
+        background-position: bottom;
+        backdrop-filter: brightness(0);
+    }
+</style>
+
+<section class="custom-background">
+    <div
+        class="w-11/12 mx-auto max-w-7xl gap-16 md:gap-0 md:h-screen text-[#f5f6f6] pt-48 font-light justify-between flex flex-col"
+    >
+        <div class="w-full md:w-1/2 text-4xl md:text-7xl">The True AI-Native CLM Platform</div>
+        <Image
+            class="self-center"
+            src="/AI-Native-Platform-Wheel.png"
+            alt="AI-Native-Platform_Wheel"
+            height={2000}
+            width={1000}
+        />
+    </div>
+</section>

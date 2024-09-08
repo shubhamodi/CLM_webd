@@ -1,0 +1,98 @@
+---
+import Hero from "~/components/features/Hero.astro";
+import Testimonials from "~/components/landing-new/Testimonials.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Metrics from "../components/features/Metrics.astro";
+import MetricsCarousel from "~/components/landing-new/MetricsCarousel.astro";
+import Features from "../components/features/Features.astro";
+
+const title = "AI Contract Creation";
+const desc =
+    "Transform your contract creation process with our AI-powered solution. Draft precise, compliant, and customized contracts in a fraction of the time, ensuring accuracy and consistency every step of the way.";
+const image = "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc1fHxjb3Jwb3JhdGV8ZW58MHwwfDB8fHwy";
+
+const metrics = [
+    {
+        value: "Accelerated Contract Creation",
+        title: "80% faster contract drafting compared to traditional methods",
+    },
+    {
+        value: "Flawless Precision",
+        title: "99% reduction in drafting errors with AI assistance",
+    },
+    {
+        value: "Uniform Excellence",
+        title: "90% improvement in contract consistency across documents",
+    },
+];
+
+const features = [
+    {
+        title: "Intelligent Template Customization",
+        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc2fHxjb3Jwb3JhdGV8ZW58MHwwfDB8fHwy",
+        desc: "Our AI adapts standard templates to meet specific needs, ensuring each contract is tailored to your unique requirements while maintaining compliance and consistency.",
+        feature_highlights: [
+            "Configure a comprehensive contract playbook to match your enterprise’ risk appetite.",
+            "Ensure standardization with preapproved clause and template libraries.",
+            "Define preferred, alternative, and walkaway positions for every clause.",
+            "Configure your own workflows for how you work – no code required.",
+            "Initiate a contract request right from where you are, be it Salesforce, Slack, or SAP.",
+            "Collaborate in real time on drafts using the in-app editor or the Microsoft Word plugin.",
+            "Flow down pre-negotiated clauses from past contracts to reduce drafting and negotiation time.",
+            "Enable users to create their own clause variations and send them for review.",
+        ],
+        key_statistics: [
+            "60% less time required to set up new playbooks",
+            "90% faster time-to-first draft",
+            "100% global compliance with contracting policies",
+        ],
+    },
+    {
+        title: "Automated Clause Selection",
+        image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTg5fHxjb3Jwb3JhdGV8ZW58MHwwfDB8fHwy",
+        desc: "Our AI selects the most appropriate clauses from a comprehensive library, ensuring each contract is precise, relevant, and compliant with your business standards.",
+        feature_highlights: [
+"Clause Library Access: Provides a vast library of pre-approved clauses",
+"Contextual Relevance: AI selects clauses based on the specific context of the contract",
+"Risk Mitigation Clauses: Recommends clauses that mitigate identified risks",
+"Standardization: Ensures consistency across all contracts by using standardized clauses",
+"Historical Data Utilization: Analyzes past contracts to recommend effective clauses",
+"Clause Performance Tracking: Monitors the performance and outcomes of specific clauses",
+
+        ],
+        key_statistics: [
+"Clause Relevance: 90% improvement in the relevance of selected clauses",
+"Risk Mitigation: 80% reduction in risks due to optimized clause selection",
+        ],
+    },
+    {
+        title: "Streamlined Collaboration",
+        image: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8b2ZmaWNlfGVufDB8MHwwfHx8Mg%3D%3D",
+        desc: "Enhance collaboration and streamline the contract creation process with real-time editing, commenting, and approval features, all integrated into a seamless workflow.",
+        feature_highlights: [
+"Real-time Editing: Multiple stakeholders can edit and review contracts simultaneously",
+"Commenting and Annotations: Easily add comments and annotations for collaborative editing",
+"Approval Workflows: Integrates seamless approval processes for faster contract finalization",
+"Access Controls: Define user roles and permissions to ensure secure collaboration",
+"Document Sharing: Share contracts securely with internal and external parties",
+"Audit Trails: Maintains a detailed history of changes and approvals for transparency",
+        ],
+        key_statistics: [
+"Collaboration Efficiency: 75% faster contract finalization through enhanced collaboration",
+"Error Reduction: 85% decrease in errors due to collaborative review processes",
+        ],
+    },
+];
+---
+
+<BaseLayout title="ContraVault - Create">
+    <Hero title={title} desc={desc} image={image} />
+    <Metrics metrics={metrics} />
+    <!-- <Testimonials /> -->
+    {
+        features.map((feature, index) => (
+            <Features feature = {feature}/>
+        ))
+    }
+    <MetricsCarousel />
+</BaseLayout>

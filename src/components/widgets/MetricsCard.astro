@@ -1,0 +1,15 @@
+---
+const {metric} = Astro.props
+import { Image } from "astro:assets";
+import GetADemobutton from "../ui/GetADemobutton.astro";
+---
+
+<div class=" w-full h-full flex flex-col-reverse md:flex-row bg-[#05272c] text-[#f5f6f6] rounded-xl" >
+    <div class="flex-1 flex flex-col gap-8 md:gap-0 justify-between m-8">
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class=" text-6xl md:text-8xl">{metric.value}%</div>
+            <div class="text-xl md:w-1/2 md:text-xl font-light">{metric.title}</div>
+        </div>
+    </div>
+    <Image class="rounded-t-xl md:rounded-l-none md:rounded-r-xl" src={metric.image} alt = {metric.title} height={20} width={500}/>
+</div>

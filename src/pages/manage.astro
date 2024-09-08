@@ -1,0 +1,114 @@
+---
+import Hero from "~/components/features/Hero.astro";
+import Testimonials from "~/components/landing-new/Testimonials.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Metrics from "../components/features/Metrics.astro";
+import MetricsCarousel from "~/components/landing-new/MetricsCarousel.astro";
+import Features from "../components/features/Features.astro";
+
+const title = "Contract Workflow Management";
+const desc =
+    "Optimize your contract lifecycle with our AI-powered workflow management system. Streamline approvals, track progress, and ensure every contract moves smoothly from draft to execution.";
+const image = "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8b2ZmaWNlfGVufDB8MHwwfHx8Mg%3D%3D";
+
+const metrics = [
+    {
+        value: "Streamlined Processes",
+        title: "75% faster contract completion from draft to execution",
+    },
+    {
+        value: "Rapid Approvals",
+        title: "80% reduction in approval time with automated workflows",
+    },
+    {
+        value: "Enhanced Coordination",
+        title: "85% improvement in task management and coordination",
+    },
+];
+
+const features = [
+    {
+        title: "Automated Workflow Creation",
+        image: "https://images.unsplash.com/photo-1552793494-111afe03d0ca?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fG9mZmljZXxlbnwwfDB8MHx8fDI%3D",
+        desc: "Our AI designs and manages workflows to streamline the entire contract lifecycle, from drafting to final execution",
+        feature_highlights: [
+            "Custom Workflow Templates: Create templates tailored to your specific contract processes",
+"Task Assignment: Automatically assigns tasks to relevant team members",
+"Milestone Tracking: Monitors key milestones and deadlines",
+"Progress Monitoring: Tracks the progress of each contract through its lifecycle",
+"Real-time Notifications: Alerts stakeholders of task assignments and changes in status",
+"Workflow Visualization: Provides visual representations of workflows for easy management",
+        ],
+        key_statistics: [
+            "Process Efficiency: 70% reduction in time spent managing workflows",
+"Task Completion Rate: 85% increase in on-time task completion",
+        ],
+    },
+    {
+        title: "Seamless Collaboration",
+        image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fG9mZmljZXxlbnwwfDB8MHx8fDI%3D",
+        desc: "Our AI designs and manages workflows to streamline the entire contract lifecycle, from drafting to final execution",
+        feature_highlights: [
+            "Collaborative Editing: Allows multiple users to edit contracts simultaneously",
+"Commenting and Annotations: Provides tools for adding comments and annotations for clear communication",
+"Approval Workflows: Integrates approval processes to ensure timely reviews and sign-offs",
+"Role-Based Access: Defines user roles and permissions to ensure secure collaboration",
+"Document Sharing: Enables secure sharing of documents with external parties",
+"Version Control: Maintains a detailed history of changes and approvals",
+        ],
+        key_statistics: [
+            
+"Collaboration Speed: 75% faster contract finalization through enhanced teamwork",
+"Error Reduction: 80% decrease in errors due to collaborative editing",
+        ],
+    },
+    {
+        title: "Integrated Task Management",
+        image: "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fG9mZmljZXxlbnwwfDB8MHx8fDI%3D",
+        desc: "Enhance teamwork with tools that facilitate seamless collaboration across departments and external parties.",
+        feature_highlights: [
+            
+"Task Scheduling: Automatically schedules tasks based on workflow requirements",
+"Priority Setting: Assigns priorities to tasks to ensure critical items are addressed first",
+"Progress Tracking: Monitors the status of tasks and overall workflow progress",
+"Deadline Reminders: Sends reminders for upcoming deadlines and overdue tasks",
+"Performance Metrics: Tracks performance metrics to identify bottlenecks and areas for improvement",
+"Automated Escalation: Escalates issues when tasks are delayed or deadlines are missed",
+        ],
+        key_statistics: [
+            
+"Task Management Efficiency: 80% improvement in task tracking and management",
+"Timely Completion: 85% increase in on-time task completion",
+        ],
+    },
+    {
+        title: "Advanced Reporting and Analytics",
+        image: "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fG9mZmljZXxlbnwwfDB8MHx8fDI%3D",
+        desc: "Gain insights into your contract workflows with comprehensive reporting and analytics, ensuring continuous improvement and efficiency.",
+        feature_highlights: [
+            "Workflow Reports: Generates detailed reports on workflow performance",
+"KPI Tracking: Monitors key performance indicators related to contract management",
+"Customizable Dashboards: Provides dashboards tailored to display relevant metrics",
+"Real-time Analytics: Delivers real-time data for up-to-date insights",
+"Trend Analysis: Identifies trends and patterns in workflow performance",
+"Exportable Reports: Exports data for sharing and further analysis",
+        ],
+        key_statistics: [
+            "Insight Accuracy: 90% accuracy in identifying workflow inefficiencies",
+"Continuous Improvement: 75% improvement in workflow processes through data-driven insights",
+        ],
+    },
+];
+---
+
+<BaseLayout title="ContraVault - Manage">
+    <Hero title={title} desc={desc} image={image} />
+    <Metrics metrics={metrics} />
+    <!-- <Testimonials /> -->
+    {
+        features.map((feature, index) => (
+            <Features feature = {feature}/>
+        ))
+    }
+    <MetricsCarousel />
+</BaseLayout>

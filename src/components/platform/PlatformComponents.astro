@@ -1,0 +1,26 @@
+---
+import Card from "./Card.astro"
+
+const data = [
+    {
+        title: "Single Extraction Agent (SEA™)",
+        desc : "Our NLP engine extracts data from each stage of the contracting lifecycle to deliver incisive insights and recommendations."
+    },
+    {
+        title: "Data-Centric, AI-Native",
+        desc : "AI is more than a feature — it’s in our DNA. With models trained on billions of data points, we help you get answers faster, negotiate better, and maximize contract performance."
+    },
+    {
+        title: "AI Studio",
+        desc : "Interface with industry-best LLMs in Sirion’s foundation model or bring your own models and use the AI studio to fine-tune them to your business."
+    }
+]
+---
+
+<section class="w-11/12 md:pt-24 my-16 mx-auto max-w-7xl gap-8 flex flex-col md:flex-row">
+    {
+        data.map((item, index)=> (
+            <Card item={item} key={index} bg="#05272c"/>
+        ))
+    }
+</section>

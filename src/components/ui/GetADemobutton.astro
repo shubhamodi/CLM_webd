@@ -1,0 +1,123 @@
+---
+
+---
+
+<!-- Button for opening the modal -->
+<button
+  class="demoButton bg-[#92429f] px-3 sm:px-4 py-2 sm:py-3 flex items-center text-xl sm:text-xl text-[#f5f6f6] rounded-2xl hover:brightness-90 transition duration-300"
+>
+  Get A Demo
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-4 w-4 sm:h-6 sm:w-6 ml-1 sm:ml-2"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"
+    ></path>
+  </svg>
+</button>
+
+<!-- Modal Component -->
+<div
+  class="modal fixed inset-0 z-50 hidden justify-center items-center backdrop-blur-lg"
+>
+  <div
+    class="modalContent bg-gradient-to-r from-[#0b1821] via-[#0e2130] to-[#0b1821] p-6 md:p-8 rounded-2xl shadow-lg max-w-full sm:max-w-lg md:max-w-md w-11/12 mx-auto scale-95 opacity-0 transition-all duration-300 ease-in-out transform"
+  >
+    <h2 class="text-xl sm:text-2xl mb-3 md:mb-4 text-white">Request a Demo</h2>
+    <form action="#" method="POST">
+      <input
+        type="text"
+        placeholder="Name"
+        name="name"
+        class="block w-full border border-gray-800 p-2 sm:p-3 mb-2 sm:mb-3 bg-[#06151e] text-white rounded-md"
+        required
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        name="email"
+        class="block w-full border border-gray-800 p-2 sm:p-3 mb-2 sm:mb-3 bg-[#06151e] text-white rounded-md"
+        required
+      />
+      <input
+        type="tel"
+        placeholder="Phone (Optional)"
+        name="phone"
+        class="block w-full border border-gray-800 p-2 sm:p-3 mb-2 sm:mb-3 bg-[#06151e] text-white rounded-md"
+      />
+      <textarea
+        placeholder="Use Case (Optional)"
+        rows="3"
+        name="useCase"
+        class="block w-full border border-gray-800 p-2 sm:p-3 mb-2 sm:mb-3 bg-[#06151e] text-white rounded-md"
+      ></textarea>
+      <button
+        type="submit"
+        class="bg-[#92429f] text-white rounded-md px-3 sm:px-4 py-2 w-full hover:bg-[#813887] transition duration-300"
+        >Submit</button
+      >
+      <button
+        type="button"
+        class="closeButton bg-gray-600 text-white rounded-md px-3 sm:px-4 py-2 w-full hover:bg-gray-700 transition duration-300 mt-2"
+        >Cancel</button
+      >
+    </form>
+  </div>
+</div>
+
+<script type="module">
+  document.querySelectorAll(".demoButton").forEach((button) => {
+    button.addEventListener("click", function () {
+      const modal = this.nextElementSibling; // Assumes modal is right next to the button
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      const modalContent = modal.querySelector(".modalContent");
+      modalContent.style.transform = "scale(1)";
+      modalContent.style.opacity = "1";
+    });
+  });
+
+  document.querySelectorAll(".closeButton").forEach((button) => {
+    button.addEventListener("click", closeTheModal);
+  });
+
+  function closeTheModal() {
+    const modal = document.querySelector(".modal");
+    const modalContent = modal.querySelector(".modalContent");
+    modalContent.style.transform = "scale(0.95)";
+    modalContent.style.opacity = "0";
+    setTimeout(() => {
+      modal.classList.remove("flex");
+      modal.classList.add("hidden");
+    }, 300); // Delay the hiding to allow animation to play
+  }
+
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const json = JSON.stringify(Object.fromEntries(formData));
+    closeTheModal();
+    try {
+      const response = await fetch("/api/sendToGoogleSheets", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: json,
+      });
+      if (response.ok) {
+        console.log("Data sent successfully");
+      } else {
+        console.error("Failed to send data");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  });
+</script>

@@ -1,0 +1,53 @@
+---
+import Testimonials from "~/components/landing-new/Testimonials.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Hero from "~/components/consumer-team/Hero.astro";
+import Accordion from "~/components/consumer-team/Accordion.astro"
+
+const title = "Revolutionize Your Procurement Process with AI";
+const desc =
+    "Empower your procurement team with our AI-powered contract management software. Accelerate contract review, ensure compliance, and optimize supplier relationships, enabling more efficient and strategic procurement operations";
+const image = "/Create-Top-Banner.png";
+
+const challenges = [
+    {
+        title: "Managing Supplier Contracts",
+        pain_point: "",
+        solution: "AI-Powered Supplier Contract Management",
+        solution_desc: "Our AI efficiently reviews and organizes supplier contracts, providing clear insights and ensuring compliance with procurement policies.",
+        image: "/Create_Authoring.png"
+    },
+    {
+        title: "Identifying Supplier Risks",
+        pain_point: "",
+        solution: "Supplier Risk Identification",
+        solution_desc: "The software analyzes contracts to highlight potential supplier risks, allowing your team to take proactive measures to mitigate them.",
+        image: "/Create_Authoring.png"
+    },
+    {
+        title: "Ensuring Contract Compliance",
+        pain_point: "",
+        solution: "AI-Driven Contract Compliance Monitoring",
+        solution_desc: "Our AI continuously monitors contracts for compliance with procurement regulations and internal standards, ensuring all agreements meet required criteria.",
+        image: "/Create_Authoring.png"
+    },
+    {
+        title: "Tracking Contract Performance",
+        pain_point: "",
+        solution: "Contract Performance Tracking",
+        solution_desc: "With real-time performance metrics and analytics, our software enables your team to track and evaluate supplier performance, ensuring optimal contract outcomes.",
+        image: "/Create_Authoring.png"
+    }
+]
+
+
+
+
+---
+
+<BaseLayout title="ContraVault - Procurement">
+    <Hero title={title} desc={desc} image={image} />
+    <Accordion challenges = {challenges}/>
+    <!-- <Testimonials/> -->
+
+</BaseLayout>

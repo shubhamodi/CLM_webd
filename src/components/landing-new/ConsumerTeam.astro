@@ -1,0 +1,49 @@
+---
+import ConsumerTeamCard from "../widgets/ConsumerTeamCard.astro"
+const teams = [
+{
+        title : "In-House Legal",
+        desc : "Leverage AI to enforce standards and secure the best terms effortlessly.",
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29ycG9yYXRlJTIwcGVvcGxlJTIwaGVhZHNob3RzfGVufDB8fDB8fHww",
+        link: "/legal"
+    },{
+        title : "Procurement",
+        desc : "Speed up supplier onboarding and ensure compliance with intelligent insights.",
+        image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29ycG9yYXRlJTIwcGVvcGxlJTIwaGVhZHNob3RzfGVufDB8fDB8fHww",
+        link: "/procurement"
+    },{
+        title : "Sales",
+        desc : "Collaborate seamlessly with legal to accelerate deal closures and improve accuracy.",
+        image: "https://images.unsplash.com/photo-1517598024396-46c53fb391a1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29ycG9yYXRlJTIwcGVvcGxlJTIwaGVhZHNob3RzfGVufDB8fDB8fHww",
+        link: "/sales"
+    },{
+        title : "Commercial and Finance",
+        desc : "Automate and optimize every aspect of contract management for finance teams",
+        image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNvcnBvcmF0ZSUyMHBlb3BsZSUyMGhlYWRzaG90c3xlbnwwfHwwfHx8MA%3D%3D",
+        link: "/commercial-finance"
+    },{
+        title : "Tendering Teams",
+        desc : "From Technical components, BOQs to risks - this CLM helps tendering teams do it all",
+        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNvcnBvcmF0ZSUyMHBlb3BsZSUyMGhlYWRzaG90c3xlbnwwfHwwfHx8MA%3D%3D",
+        link: "/tendering-teams"
+    },
+]
+---
+
+<section>
+    <div class="w-11/12 max-w-7xl mx-auto flex mt-[100px] gap-12 font-light flex-col">
+        <div class="flex flex-col md:flex-row gap-8 md:gap-32 text-[#f5f6f6]">
+            <div class="flex-1 text-3xl md:text-5xl">Advanced CLM for Every Department</div>
+            <div class="flex-1 text-lg font-extralight">Unite your teams with a high-tech platform designed to automate, streamline, and secure your contract management processes.</div>
+        </div>
+        <div class="flex items-center md:items-stretch flex-col md:flex-row gap-6">
+            {
+                teams.map((team, index) => (
+                    <div class="flex flex-row">
+                        <ConsumerTeamCard team={team}/>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+ </section>

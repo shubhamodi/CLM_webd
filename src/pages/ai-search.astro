@@ -1,0 +1,91 @@
+---
+import Hero from "~/components/features/Hero.astro";
+import Testimonials from "~/components/landing-new/Testimonials.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Metrics from "../components/features/Metrics.astro";
+import MetricsCarousel from "~/components/landing-new/MetricsCarousel.astro";
+import Features from "../components/features/Features.astro";
+
+const title = "AI Search & Retrieve";
+const desc = "Effortlessly find and retrieve contract information with our AI-powered search and retrieval system. Access critical data instantly, streamline your workflow, and ensure you have the information you need at your fingertips."
+const image = "https://images.unsplash.com/photo-1573496267526-08a69e46a409?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGNvcnBvcmF0ZXxlbnwwfDB8MHx8fDI%3D";
+
+const metrics = [
+    {
+        value: "Instant Information Access",
+        title: "90% faster retrieval of contract data compared to manual searches",
+    },
+    {
+        value: "Precise Results",
+        title: "95% accuracy in locating relevant contract information",
+    },
+    {
+        value: "Enhanced User Experience",
+        title: "85% increase in user satisfaction with search functionality",
+    },
+];
+
+const features = [
+    {
+        title: "Advanced Search Capabilities",
+        image: "https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fGNvcnBvcmF0ZXxlbnwwfDB8MHx8fDI%3D",
+        desc: "Our AI-powered system delivers comprehensive search results, allowing you to quickly and efficiently locate the exact information you need within your contracts",
+        feature_highlights: ["Keyword Search: Finds contracts and clauses using specific keywords",
+"Contextual Search: Understands context to deliver the most relevant results",
+"Metadata Filtering: Filters results based on metadata such as dates, parties, and contract types",
+"Full-Text Search: Searches the entire text of contracts for comprehensive results",
+"Saved Searches: Saves frequent searches for quick access",
+"Boolean Search: Uses Boolean operators for precise search queries",
+        ],
+        key_statistics: [
+"Search Speed: 90% faster retrieval of relevant documents",
+"Search Precision: 95% accuracy in locating specific contract details",
+        ],
+    },
+    {
+        title: "Intelligent Document Categorization",
+        image: "https://images.unsplash.com/photo-1553484771-898ed465e931?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzJ8fGNvcnBvcmF0ZXxlbnwwfDB8MHx8fDI%3D",
+        desc: "Organize and categorize your contracts efficiently with AI, making it easier to manage and access your contract library",
+        feature_highlights: ["Automatic Categorization: AI categorizes documents based on content and metadata",
+"Custom Labels: Allows custom labeling for easy identification and retrieval",
+"Folder Organization: Organizes contracts into intuitive folder structures",
+"Tagging System: Uses tags for additional categorization and searchability",
+"Contract Summaries: Provides summaries for quick understanding of document content",
+"Batch Processing: Categorizes multiple documents at once for efficiency",
+        ],
+        key_statistics: [
+            "Organization Efficiency: 85% reduction in time spent organizing contracts",
+"Retrieval Accuracy: 90% increase in accuracy when retrieving categorized documents",
+        ],
+    },
+    {
+        title: "AI Indexing",
+        image: "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fGNvcnBvcmF0ZXxlbnwwfDB8MHx8fDI%3D",
+        desc: "Streamline your contract management with AI Indexing. Our AI identifies and indexes important clauses, making them instantly accessible through a clickable index for efficient clause retrieval.",
+        feature_highlights: [
+"Clause Identification: AI recognizes and indexes key clauses in each contract",
+"Clickable Index: Provides an easy-to-navigate, clickable index of important clauses",
+"Custom Indexing: Tailors the indexing system based on your specific needs and frequently used clauses",
+"Automated Updates: Continuously updates the index as new contracts are added and existing ones are modified",
+"Search Integration: Integrates with the search function for seamless clause retrieval",
+"Clause Highlighting: Highlights indexed clauses within the contract text for quick reference",
+        ],
+        key_statistics: [
+"Retrieval Speed: 85% faster access to important clauses",
+"Indexing Accuracy: 90% accuracy in identifying and indexing relevant clauses",
+        ],
+    },
+];
+---
+
+<BaseLayout title="ContraVault - AI Search">
+    <Hero title={title} desc={desc} image={image} />
+    <Metrics metrics={metrics} />
+    <!-- <Testimonials /> -->
+    {
+        features.map((feature, index) => (
+            <Features feature = {feature}/>
+        ))
+    }
+    <MetricsCarousel />
+</BaseLayout>

@@ -1,0 +1,57 @@
+---
+const homeFt1 = "/home-ft-1.webp"
+const homeFt2 = "/home-ft-2.webp"
+const homeFt3 = "/home-ft-3.webp"
+const homeFt4 = "/home-ft-4.webp"
+const homeFt5 = "/home-ft-5.webp"
+const homeFt6 = "/home-ft-6.webp"
+
+
+---
+
+<style>
+    .card {
+        transition: transform, filter ease-in 100ms;
+        cursor: pointer;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        filter: brightness(1.15);
+    }
+</style>
+
+<section>
+    <div class="w-11/12 max-w-7xl mx-auto mt-16 gap-4 md:gap-8 md:mt-32 font-light flex flex-col">
+        <div class="text-2xl md:text-3xl font-light text-[#f5f6f6] mb-4 md:mb-8">Get the most out of your contracts</div>
+        <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+            <a href="/risk-analysis" class="flex flex-col bg-[#e0e3fe] rounded-3xl gap-6 md:gap-6 p-4 md:p-8 card">
+                <div class="text-xl md:text-3xl">Intelligent Risk Analysis</div>
+                <img class="rounded-3xl" src={homeFt1} height={350} alt="home feature 1"/>
+            </a>
+            <a href="/ai-search" class="flex flex-col bg-[#09434a] rounded-3xl p-4 md:p-8 gap-3 md:gap-6 card">
+                <div class="text-xl md:text-3xl text-[#f5f6f6]">AI Search & Retrieve</div>
+                <img class="rounded-3xl" src={homeFt2} height={350} alt="home feature 2"/>
+            </a>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+            <a href="/create" class="flex flex-col bg-[#b0b6fc] rounded-3xl gap-3 md:gap-6 p-4 md:p-8 card">
+                <div class="text-xl md:text-3xl">AI Contract Creation</div>
+                <img class="rounded-3xl" src={homeFt3} height={350} alt="home feature 3"/>
+            </a>
+            <a href="/manage" class="flex flex-col bg-[#083439] rounded-3xl p-4 md:p-8 gap-3 md:gap-6 card">
+                <div class="text-xl md:text-3xl text-[#f5f6f6]">Contract Workflow Management</div>
+                <img class="rounded-3xl" src={homeFt4} height={350} alt="home feature 4"/>
+            </a>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+            <a href="/ai-contract-review" class="flex flex-col bg-[#97a0fb] rounded-3xl gap-3 md:gap-6 p-4 md:p-8 card">
+                <div class="text-xl md:text-3xl">AI Contract Review</div>
+                <img class="rounded-3xl" src={homeFt5} height={350} alt="home feature 5"/>
+            </a>
+            <a href="/analytics" class="flex flex-col bg-[#05272c] rounded-3xl p-4 md:p-8 gap-3 md:gap-6 card">
+                <div class="text-xl md:text-3xl text-[#f5f6f6]">Smart Analytics and Value Maximisation</div>
+                <img class="rounded-3xl" src={homeFt6} height={350} alt="home feature 6"/>
+            </a>
+        </div>
+    </div>
+</section>

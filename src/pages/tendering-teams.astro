@@ -1,0 +1,52 @@
+---
+import Testimonials from "~/components/landing-new/Testimonials.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Hero from "~/components/consumer-team/Hero.astro";
+import Accordion from "~/components/consumer-team/Accordion.astro"
+
+const title = "Enhance Your Tendering Process with AI Precision";
+const desc =
+    "Equip your tendering team with our AI-driven contract management software. Simplify tender creation, ensure compliance, and optimize bid management, enabling your team to submit winning tenders efficiently and effectively";
+const image = "/Create-Top-Banner.png";
+
+const challenges = [
+    {
+        title: "Complex Tender Documentation",
+        pain_point: "",
+        solution: "AI-Driven Tender Simplification",
+        solution_desc: "Our AI simplifies complex tender documents, providing clear insights and ensuring accurate and comprehensive tender submissions.",
+        image: "/Create_Authoring.png"
+    },
+    {
+        title: "Ensuring Regulatory Compliance",
+        pain_point: "",
+        solution: "Automated Compliance Checks",
+        solution_desc: "The software automatically checks tender documents for compliance with relevant regulations and standards, ensuring adherence and reducing the risk of disqualification.",
+        image: "/Create_Authoring.png"
+    },
+    {
+        title: "Managing Multiple Bids",
+        pain_point: "",
+        solution: "Efficient Bid Management",
+        solution_desc: "Our AI organizes and streamlines bid management, allowing your team to efficiently handle multiple tender submissions simultaneously.",
+        image: "/Create_Authoring.png"
+    },
+    {
+        title: "Tight Submission Deadlines",
+        pain_point: "",
+        solution: "Deadline Tracking and Alerts",
+        solution_desc: "With automated deadline tracking and alerts, our software ensures your team meets all submission deadlines, enhancing your chances of winning bids.",
+        image: "/Create_Authoring.png"
+    }
+]
+
+
+
+---
+
+<BaseLayout title="ContraVault - Tendering Teams">
+    <Hero title={title} desc={desc} image={image} />
+    <Accordion challenges = {challenges}/>
+    <!-- <Testimonials/> -->
+
+</BaseLayout>

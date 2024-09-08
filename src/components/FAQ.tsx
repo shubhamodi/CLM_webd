@@ -12,7 +12,7 @@ function FAQ({ idx }) {
           <Accordion.Header>
             <Accordion.Trigger className={styles.trigger}>
               {question}
-              <img className={styles.svg}  alt="" />
+              <img className={styles.svg}  alt="accordion trigger" />
             </Accordion.Trigger>
           </Accordion.Header>
           <Accordion.Content className={styles.content}>{answer}</Accordion.Content>
