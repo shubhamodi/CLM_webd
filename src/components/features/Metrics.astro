@@ -3,21 +3,21 @@ const { metrics } = Astro.props;
 ---
 
 <section>
-    <div class="w-11/12 max-w-7xl mx-auto gap-6 text-[#f5f6f6] flex flex-col md:flex-row">
-        {
-            metrics.map((metric, index) => (
-                <div
-                    class="flex-1 bg-[#05272c] flex gap-3 flex-col pt-48 p-8 rounded-3xl"
-                    key={index}
-                >
-                    <div class="flex gap-3 flex-col">
-                        <div class="text-5xl font-light">{metric.value}</div>
-                        <div class="text-xl font-extralight">
-                            {metric.title}
-                        </div>
-                    </div>
-                </div>
-            ))
-        }
-    </div>
+  <div
+    class="w-11/12 max-w-7xl mx-auto gap-6 text-white flex flex-col md:flex-row"
+  >
+    {
+      metrics.map((metric, index) => (
+        <div
+          class="flex-1 bg-[#05272c] flex gap-3 flex-col pt-48 p-8 rounded-3xl"
+          key={index}
+        >
+          <div class="flex gap-3 flex-col">
+            <div class="text-5xl font-light">{metric.value}</div>
+            <div class="text-xl font-extralight">{metric.title}</div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
 </section>

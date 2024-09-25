@@ -1,24 +1,35 @@
 ---
-import GetADemobutton from "../ui/GetADemobutton.astro"
+import GetADemobutton from "../ui/GetADemobutton.astro";
 ---
 
 <style>
-.custom-background {
-  background-image: url('/s2-bg.png');
-  background-size: cover; /* Adjust background size */
-  background-position: center; /* Center the background image */
-  z-index: 10;
-}
+  .custom-background {
+    background: linear-gradient(
+      90deg,
+      rgba(10, 65, 66, 1) 0%,
+      rgba(18, 115, 117, 1) 25%,
+      rgba(11, 66, 67, 0.9) 51%,
+      rgba(18, 115, 117, 1) 81%,
+      rgba(10, 65, 66, 1) 100%
+    );
+    background-size: cover; /* Adjust background size */
+    background-position: center; /* Center the background image */
+    z-index: 10;
+  }
 </style>
 
-<section class="custom-background">
-  <div class="w-11/12 max-w-7xl mx-auto flex flex-col font-light items-center mt-16 justify-center py-16 sm:py-32 sm:mt-0 gap-5 sm:gap-10">
-    <div class="text-3xl sm:text-5xl text-[#e1e3fe] text-center">
-      Drive Revenues and Save Weeks
+<div class="p-22">
+  <section class="custom-background m-20 rounded-3xl text-white">
+    <div
+      class="w-11/12 max-w-7xl mx-auto flex flex-col font-light items-center mt-16 justify-center py-16 sm:py-32 sm:mt-0 gap-5 sm:gap-10"
+    >
+      <div class="text-3xl sm:text-5xl text-center">
+        Drive Revenues and Save Weeks
+      </div>
+      <div class="text-lg sm:text-2xl text-center font-extralight">
+        An AI-first CLM to make every part of <br /> contract management smart.
+      </div>
+      <GetADemobutton />
     </div>
-    <div class="text-lg sm:text-2xl text-[#f5f6f6] text-center font-extralight">
-      An AI-first CLM to make every part of <br> contract management smart. 
-    </div>
-    <GetADemobutton />
-  </div>
-</section>
+  </section>
+</div>

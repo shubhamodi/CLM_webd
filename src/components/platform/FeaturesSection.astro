@@ -6,55 +6,53 @@ import SeeMorebutton from "../ui/SeeMorebutton.astro";
 ---
 
 <style>
-    .custom-background {
-        background-image: url("/s-bg.svg");
-        background-size: cover;
-    }
+  .custom-background {
+    background-image: url("/s-bg.svg");
+    background-size: cover;
+  }
 </style>
 
-<section class="custom-background rounded-xl p-2 md:p-16 text-[#f5f6f6] my-8 w-full font-light mx-auto">
-    <div class="flex w-full gap-6 md:gap-12 items-start flex-col">
-        <div class="flex flex-col gap-4 items-start w-full">
-            <div class="text-4xl">{feature.title}</div>
-            <SeeMorebutton link="/" />
-        </div>
-        <div class="w-full flex flex-col md:flex-row gap-10">
-            <div class="">
-                <Image
-                    src={feature.image}
-                    alt={feature.title}
-                    height={500}
-                    width={650}
-                />
-            </div>
-
-            <div class="flex-1 w-full">
-                <div class="text-xl">
-                    {feature.desc}
-                </div>
-                <hr class="my-6 border-t-2 border-[#09434a]" />
-                <div class="flex gap-4 md:gap-0 flex-col md:flex-row w-full justify-between font-extralight">
-                    <div class="flex w-full flex-col gap-4">
-                        {
-                            feature.feature_highlights.map(
-                                (highlight, index) => (
-                                    <div class="text-base gap-2 flex">
-                                        <div class="text-xl font-bold">·</div>
-                                        <div>{highlight}</div>
-                                    </div>
-                                )
-                            )
-                        }
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-col md:flex-row gap-8">
-            {
-                feature.data.map((item, index)=> (
-                    <CardTwo item={item} key={index}/>
-                ))
-            }
-        </div>
+<section
+  class="custom-background rounded-xl p-2 md:p-16 text-[#000000] my-8 w-full font-light mx-auto"
+>
+  <div class="flex w-full gap-6 md:gap-12 items-start flex-col">
+    <div class="flex flex-col gap-4 items-start w-full">
+      <div class="text-4xl">{feature.title}</div>
+      <SeeMorebutton link="/" />
     </div>
+    <div class="w-full flex flex-col md:flex-row gap-10">
+      <div class="">
+        <Image
+          src={feature.image}
+          alt={feature.title}
+          height={500}
+          width={650}
+        />
+      </div>
+
+      <div class="flex-1 w-full">
+        <div class="text-xl">
+          {feature.desc}
+        </div>
+        <hr class="my-6 border-t-2 border-[#09434a]" />
+        <div
+          class="flex gap-4 md:gap-0 flex-col md:flex-row w-full justify-between font-extralight"
+        >
+          <div class="flex w-full flex-col gap-4">
+            {
+              feature.feature_highlights.map((highlight, index) => (
+                <div class="text-base gap-2 flex">
+                  <div class="text-xl font-bold">·</div>
+                  <div>{highlight}</div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row gap-8">
+      {feature.data.map((item, index) => <CardTwo item={item} key={index} />)}
+    </div>
+  </div>
 </section>

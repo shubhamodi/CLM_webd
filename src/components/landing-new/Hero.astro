@@ -4,21 +4,21 @@ import GetADemobutton from "../ui/GetADemobutton.astro";
 import ViewPlatformbutton from "../ui/ViewPlatformbutton.astro";
 
 const text1 = "AI Driven Contract";
-const letters1 = text1.split('');
+const letters1 = text1.split("");
 
-const delay = text1.length*0.1
+const delay = text1.length * 0.1;
 
 const text2 = "Lifecycle Management";
-const letters2 = text2.split('');
+const letters2 = text2.split("");
 
-import heroLanding from "../../assets/images/hero-landing.webp"
+import heroLanding from "../../assets/images/hero-landing.webp";
 
-import Image from "astro/components/Image.astro";
-
+// import Image from "astro/components/Image.astro";
+// import { Image } from '@astrojs/image/components';
 ---
 
 <style>
-    .image-container {
+  .image-container {
     overflow: hidden; /* Ensures the zoom does not extend outside the container */
     border-radius: 1.5rem; /* Adjust to match Tailwind's rounded-3xl */
     display: inline-block; /* or flex, depending on your layout */
@@ -33,12 +33,20 @@ import Image from "astro/components/Image.astro";
   }
 
   @keyframes zoomInOnLoad {
-    from { transform: scale(1); }
-    to { transform: scale(1.05); }
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.05);
+    }
   }
   @keyframes fadeInEffect {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   .fade-in {
@@ -49,18 +57,22 @@ import Image from "astro/components/Image.astro";
   }
 
   .custom-background {
-      background-image: url('/hero-dark-bg-3000.svg');
-      background-size: cover;
-      background-position: center;
-      box-shadow: inset 0 -130px 200px 0px #0b1821
-    }
+    /* background-image: url("/hero-dark-bg-3000.svg"); */
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 -130px 200px 0px #fff;
+  }
 </style>
 
 <section class="relative custom-background">
-    <div class="w-11/12 mx-auto h-auto md:h-screen text-[#f5f6f6] font-light flex flex-col items-center justify-evenly ">
-        <div class="flex flex-col mt-48 md:flex-row gap-8 md:gap-48 w-full max-w-7xl md:mt-16">
-            <div class="text-4xl md:text-7xl">
-                <!-- {letters1.map((letter, index) => (
+  <div
+    class="w-11/12 mx-auto h-auto md:h-screen text-[#000000] font-light flex flex-col items-center justify-evenly"
+  >
+    <div
+      class="flex flex-col mt-48 md:flex-row gap-8 md:gap-48 w-full max-w-7xl md:mt-16"
+    >
+      <div class="text-4xl md:text-7xl">
+        <!-- {letters1.map((letter, index) => (
                     <span class="fade-in" style={{ '--animation-delay': `${index * 0.1}s` }}>
                         {letter === ' ' ? '\u00A0' : letter}
                     </span>
@@ -71,22 +83,36 @@ import Image from "astro/components/Image.astro";
                         {letter === ' ' ? '\u00A0' : letter}
                     </span>
                 ))} -->
-                {text1} <br/> {text2}
-            </div>
-            <div class="text-xl md:text-xl flex flex-col justify-between">
-                <div>
-                    Read, write and execute contract <br> using our conversational co-pilot.
-                </div>
-                <div class="flex justify-center flex-col items-start gap-4 my-8 md:my-0 md:flex-row">
-                    <GetADemobutton />
-                    <ViewPlatformbutton/>
-                </div>
-            </div>
+        {text1}
+        <br />
+        {text2}
+      </div>
+      <div class="text-xl md:text-xl flex flex-col justify-between">
+        <div>
+          Read, write and execute contract <br /> using our conversational co-pilot.
         </div>
-        <div class="w-full max-w-7xl image-container">
-            <img src={homeHero} class="rounded-3xl min-h-60 object-cover zoom-effect" alt="Homepage Hero Image"/>
-             <!-- <Image src={heroLanding} alt="Homepage Hero Image" inferSize /> -->
+        <div
+          class="flex justify-center flex-col items-start gap-4 my-8 md:my-0 md:flex-row"
+        >
+          <GetADemobutton />
+          <ViewPlatformbutton />
         </div>
+      </div>
     </div>
-</section>
+    <div class="w-full max-w-7xl image-container">
+      <img
+        src={homeHero}
+        class="rounded-3xl min-h-60 object-cover zoom-effect"
+        alt="Homepage Hero Image"
+      />
+      <!-- <Image
+        src={homeHero}
+        alt="Homepage Hero Image"
+        width={1200}
+        height={600}
+        class="rounded-3xl object-cover zoom-effect"
+      /> -->
 
+    </div>
+  </div>
+</section>

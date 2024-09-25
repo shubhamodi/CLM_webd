@@ -19,7 +19,10 @@ const {
 {
   (title || subtitle || tagline) && (
     <div
-      class={twMerge("mb-8 text-[#f5f6f6] md:mx-auto md:mb-12 text-center", containerClass)}
+      class={twMerge(
+        "mb-8 text-[#000000] md:mx-auto md:mb-12 text-center",
+        containerClass
+      )}
     >
       {tagline && (
         <p

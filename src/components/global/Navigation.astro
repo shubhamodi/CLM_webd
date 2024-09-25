@@ -10,7 +10,7 @@
       // Check if the navbar element actually exists
       window.addEventListener("scroll", () => {
         if (window.scrollY > 40) {
-          navbar.style.backgroundColor = "#0b1821"; // Change to black when scroll is more than 20px
+          navbar.style.backgroundColor = "#fff"; // Change to black when scroll is more than 20px
         } else {
           navbar.style.backgroundColor = "transparent"; // Change back to transparent when less than 20px
         }
@@ -25,7 +25,7 @@
     position: fixed;
     top: 0;
     z-index: 1000; /* Ensure it stays on top of other content */
-    /* background: #0b1821; Ensures the text doesn't blend with the page content when scrolling */
+    /* background: #fff; Ensures the text doesn't blend with the page content when scrolling */
     width: 100%;
     transition: background-color 300ms;
   }
@@ -51,7 +51,7 @@
       class="relative flex flex-col px-3 w-full py-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6"
     >
       <div class="flex flex-row items-center justify-between lg:justify-start">
-        <a href="/" class="text-[#f5f6f6] inline-flex items-center gap-3">
+        <a href="/" class="text-[#000000] inline-flex items-center gap-3">
           <img src="/favicon.ico" class="h-8" alt="logo" />
           <span class="font-bold font-display">ContraVault</span>
         </a>
@@ -87,7 +87,7 @@
         class="flex-col items-center flex-grow hidden md:pb-0 md:flex md:justify-end md:flex-row"
       >
         <div
-          class="px-2 nav_a relative lg:px-6 py-2 md:px-3 text-sm font-medium text-[#F5F6F6] hover:text-accent-400 lg:ml-auto"
+          class="px-2 nav_a relative lg:px-6 py-2 md:px-3 text-sm font-medium text-[#000000] hover:text-accent-400 lg:ml-auto"
         >
           <div>Platform</div>
           <div
@@ -95,7 +95,10 @@
           >
             <div class="flex gap-1 w-full flex-col">
               <!-- <a href="/store" class="px-4 flex items-center py-2"> -->
-              <a href="/ai-search" class="px-4 flex items-center w-full justify-between py-2 hover:text-primary">
+              <a
+                href="/ai-search"
+                class="px-4 flex items-center w-full justify-between py-2 hover:text-primary"
+              >
                 <div>Search</div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -114,8 +117,11 @@
             </div>
             <div class="flex gap-1 flex-col w-full">
               <!-- <a href="/create" class="px-4 flex items-center py-2"> -->
-              <a href="/create" class="px-4 flex items-center py-2 w-full justify-between hover:text-primary">
-              <div>Create</div>
+              <a
+                href="/create"
+                class="px-4 flex items-center py-2 w-full justify-between hover:text-primary"
+              >
+                <div>Create</div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-4 w-4 sm:h-4 sm:w-4 ml-1 sm:ml-2"
@@ -133,7 +139,10 @@
             </div>
             <div class="flex gap-1 flex-col w-full">
               <!-- <a href="/manage" class="px-4 flex items-center py-2"> -->
-              <a href="/manage" class="px-4 flex items-center py-2 w-full justify-between hover:text-primary">
+              <a
+                href="/manage"
+                class="px-4 flex items-center py-2 w-full justify-between hover:text-primary"
+              >
                 <div>Manage</div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -152,7 +161,10 @@
             </div>
             <div class="flex gap-1 flex-col w-full">
               <!-- <a href="/manage" class="px-4 flex items-center py-2"> -->
-              <a href="/risk-analysis" class="px-4 flex items-center py-2 w-full justify-between hover:text-primary">
+              <a
+                href="/risk-analysis"
+                class="px-4 flex items-center py-2 w-full justify-between hover:text-primary"
+              >
                 <div>Risk Analysis</div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +183,10 @@
             </div>
             <div class="flex gap-1 flex-col w-full">
               <!-- <a href="/manage" class="px-4 flex items-center py-2"> -->
-              <a href="/ai-search" class="px-4 flex items-center py-2 w-full justify-between hover:text-primary">
+              <a
+                href="/ai-search"
+                class="px-4 flex items-center py-2 w-full justify-between hover:text-primary"
+              >
                 <div>AI Search</div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -190,7 +205,10 @@
             </div>
             <div class="flex gap-1 flex-col w-full">
               <!-- <a href="/manage" class="px-4 flex items-center py-2"> -->
-              <a href="/ai-contract-review" class="px-4 flex items-center py-2 w-full justify-between hover:text-primary">
+              <a
+                href="/ai-contract-review"
+                class="px-4 flex items-center py-2 w-full justify-between hover:text-primary"
+              >
                 <div>Contract Review</div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -211,7 +229,7 @@
         </div>
 
         <div
-          class="px-2 relative lg:px-6 nav_a py-2 md:px-3 text-sm font-medium text-[#F5F6F6] hover:text-accent-400"
+          class="px-2 relative lg:px-6 nav_a py-2 md:px-3 text-sm font-medium text-[#000000] hover:text-accent-400"
         >
           <span>Solutions</span>
           <div
@@ -252,18 +270,18 @@
         </div>
 
         <a
-          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-[#F5F6F6] hover:text-accent-400"
+          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-[#000000] hover:text-accent-400"
           href="/pricing">Pricing</a
         >
 
         <a
-          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-[#F5F6F6] hover:text-accent-400"
+          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-[#000000] hover:text-accent-400"
           href="/faq"
         >
           FAQ</a
         >
         <a
-          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-[#F5F6F6] hover:text-accent-400"
+          class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-[#000000] hover:text-accent-400"
           href="/blog"
         >
           Blogs</a
@@ -272,7 +290,7 @@
         <!-- <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
           <a
             href="/signup"
-            class="block px-4 py-2 mt-2 text-sm font-medium text-[#F5F6F6] md:mt-0 hover:text-accent-400 focus:outline-none focus:shadow-outline"
+            class="block px-4 py-2 mt-2 text-sm font-medium text-[#000000] md:mt-0 hover:text-accent-400 focus:outline-none focus:shadow-outline"
           >
             Sign up
           </a>

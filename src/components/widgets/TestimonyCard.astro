@@ -1,22 +1,28 @@
 ---
-const {testimonial} = Astro.props
-import { Image } from "astro:assets"
-import SeeAllCustomersbutton from "../../components/ui/SeeAllCustomersbutton.astro"
+const { testimonial } = Astro.props;
+import { Image } from "astro:assets";
+import SeeAllCustomersbutton from "../../components/ui/SeeAllCustomersbutton.astro";
 ---
 
-<div class="w-full h-full flex flex-col-reverse md:flex-row gap-6 p-6 bg-[#4d565e] text-[#f5f6f6] justify-between rounded-xl ">
-    <div class="w-full md:w-1/2 flex flex-col justify-between font-light">
-        <div class="flex flex-col gap-5">
-            <div class="text-lg md:text-2xl">
-                "{testimonial.content}"
-            </div>
-            <div class=" text-sm md:text-base font-extralight">
-                {testimonial.signature}<br> -{testimonial.company}
-            </div>
-        </div>
-        <div class="mt-8 md:mt-0">
-            <SeeAllCustomersbutton/>
-        </div>
+<div
+  class="w-full h-full flex flex-col-reverse md:flex-row gap-6 p-6 bg-[#4d565e] text-[#000000] justify-between rounded-xl"
+>
+  <div class="w-full md:w-1/2 flex flex-col justify-between font-light">
+    <div class="flex flex-col gap-5">
+      <div class="text-lg md:text-2xl">
+        "{testimonial.content}"
+      </div>
+      <div class="text-sm md:text-base font-extralight">
+        {testimonial.signature}<br /> -{testimonial.company}
+      </div>
     </div>
-        <img class="rounded-xl max-h-72" src = {testimonial.image} alt = {testimonial.company}/>
+    <div class="mt-8 md:mt-0">
+      <SeeAllCustomersbutton />
+    </div>
+  </div>
+  <img
+    class="rounded-xl max-h-72"
+    src={testimonial.image}
+    alt={testimonial.company}
+  />
 </div>

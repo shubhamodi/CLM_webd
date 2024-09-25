@@ -3,56 +3,52 @@ const { feature } = Astro.props;
 import { Image } from "astro:assets";
 ---
 
-<section class="text-[#f5f6f6] my-8 w-11/12 font-light max-w-7xl mx-auto">
-    <div class="flex w-full gap-12 flex-col">
-        <div class="text-4xl">{feature.title}</div>
-        <div class="w-full flex flex-col md:flex-row gap-10">
-            <div class="">
-                <Image
-                    src={feature.image}
-                    alt={feature.title}
-                    height={500}
-                    width={650}
-                />
-            </div>
+<section class="text-[#000000] my-8 w-11/12 font-light max-w-7xl mx-auto">
+  <div class="flex w-full gap-12 flex-col">
+    <div class="text-4xl">{feature.title}</div>
+    <div class="w-full flex flex-col md:flex-row gap-10">
+      <div class="">
+        <Image
+          src={feature.image}
+          alt={feature.title}
+          height={500}
+          width={650}
+        />
+      </div>
 
-            <div class="flex-1 w-full">
-                <div class="text-xl">
-                    {feature.desc}
-                </div>
-                <hr class="my-6 border-t-2 border-[#09434a]" />
-                <div class="flex gap-4 flex-col w-full justify-between ">
-                    <div class="">Feature Highlights</div>
-                    <div class="flex w-full flex-col gap-4 font-extralight">
-                        {
-                            feature.feature_highlights.map(
-                                (highlight, index) => (
-                                    <div class="text-base gap-2 flex">
-                                        <div class="text-xl font-bold">·</div>
-                                        <div>{highlight}</div>
-                                    </div>
-                                ),
-                            )
-                        }
-                    </div>
-                </div>
-                <hr class="my-6 border-t-2 border-[#09434a]" />
-                <div class="flex gap-4 flex-col w-full justify-between">
-                    <div class="">Key Statistics</div>
-                    <div class="flex w-full flex-col gap-4 font-extralight">
-                        {
-                            feature.key_statistics.map(
-                                (statistic, index) => (
-                                    <div class="text-base gap-2 flex">
-                                        <div class="text-xl font-bold">·</div>
-                                        <div>{statistic}</div>
-                                    </div>
-                                ),
-                            )
-                        }
-                    </div>
-                </div>
-            </div>
+      <div class="flex-1 w-full">
+        <div class="text-xl">
+          {feature.desc}
         </div>
+        <hr class="my-6 border-t-2 border-[#09434a]" />
+        <div class="flex gap-4 flex-col w-full justify-between">
+          <div class="">Feature Highlights</div>
+          <div class="flex w-full flex-col gap-4 font-extralight">
+            {
+              feature.feature_highlights.map((highlight, index) => (
+                <div class="text-base gap-2 flex">
+                  <div class="text-xl font-bold">·</div>
+                  <div>{highlight}</div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <hr class="my-6 border-t-2 border-[#09434a]" />
+        <div class="flex gap-4 flex-col w-full justify-between">
+          <div class="">Key Statistics</div>
+          <div class="flex w-full flex-col gap-4 font-extralight">
+            {
+              feature.key_statistics.map((statistic, index) => (
+                <div class="text-base gap-2 flex">
+                  <div class="text-xl font-bold">·</div>
+                  <div>{statistic}</div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>

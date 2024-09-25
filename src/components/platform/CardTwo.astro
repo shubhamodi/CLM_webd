@@ -2,11 +2,13 @@
 const { item } = Astro.props;
 ---
 
-<div class="flex-1 bg-[#f5f6f6] p-8 rounded-xl flex flex-col gap-12 justify-between text-black">
-    <div class="text-3xl font-light">
-        {item.title}
-    </div>
-    <div class="font-extralight">
-        {item.desc}
-    </div>
+<div
+  class="flex-1 bg-[#000000] p-8 rounded-xl flex flex-col gap-12 justify-between text-black"
+>
+  <div class="text-3xl font-light">
+    {item.title}
+  </div>
+  <div class="font-extralight">
+    {item.desc}
+  </div>
 </div>

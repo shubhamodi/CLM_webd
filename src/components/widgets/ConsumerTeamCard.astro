@@ -3,23 +3,26 @@ import { Image } from "astro:assets";
 const { team } = Astro.props;
 ---
 
-<a href={team.link} class="flex cursor-pointer flex-1 flex-col gap-4 bg-[#083439] rounded-xl w-full max-w-sm transition-transform hover:-translate-y-1">
-    <!-- Set maximum width -->
-    <Image
-        src={team.image}
-        alt={team.title}
-        inferSize
-        class="w-full max-h-56 object-cover bg-top rounded-t-xl"
-    />
-    <div class="flex flex-col text-[#f5f6f6] p-6">
-        <!-- Added padding -->
-        <div class="text-2xl font-light mb-2">
-            <!-- Enhanced title -->
-            {team.title}
-        </div>
-        <div class="text-sm font-extralight">
-            <!-- Description text styling -->
-            {team.desc}
-        </div>
+<a
+  href={team.link}
+  class="flex cursor-pointer flex-1 flex-col gap-4 bg-[#083439] rounded-xl w-full max-w-sm transition-transform hover:-translate-y-1"
+>
+  <!-- Set maximum width -->
+  <Image
+    src={team.image}
+    alt={team.title}
+    inferSize
+    class="w-full max-h-56 object-cover bg-top rounded-t-xl"
+  />
+  <div class="flex flex-col text-white p-6">
+    <!-- Added padding -->
+    <div class="text-2xl font-light mb-2">
+      <!-- Enhanced title -->
+      {team.title}
     </div>
+    <div class="text-sm font-extralight">
+      <!-- Description text styling -->
+      {team.desc}
+    </div>
+  </div>
 </a>

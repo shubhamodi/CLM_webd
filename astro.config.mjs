@@ -12,6 +12,7 @@ import react from '@astrojs/react';
 import { readingTimeRemarkPlugin } from './src/utils/frontmatter.mjs';
 import { ANALYTICS, SITE } from './src/utils/config.ts';
 import vercel from '@astrojs/vercel/serverless';
+import image from '@astrojs/image';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const whenExternalScripts = (items = []) =>
@@ -37,6 +38,7 @@ export default defineConfig({
       experimentalReactChildren: true,
       // include: ['**/react/*'],
     }),
+    image(),
     tailwind({
       applyBaseStyles: false,
     }),
