@@ -1,157 +1,197 @@
 <section>
   <div
-    class="mx-auto w-full lg:px-24 max-w-7xl md:px-12 items-center px-8 py-24 scroll-mt-12"
+    class="mx-auto w-full lg:px-24 max-w-7xl md:px-12 items-center px-8 py-24"
   >
     <div>
-      <p
-        class="text-3xl font-normal tracking-tight text-[#000000] font-display"
-      >
-        Troubleshooting Guide
-      </p>
-      <p class="text-base mt-4 text-zinc-300">
-        Resolve common issues with the ContraVault Add-In for Microsoft Word.
-      </p>
+      <div class="relative mx-auto max-w-[40rem] pt-20 pb-24">
+        <h1
+          class="text-4xl tracking-tight font-medium text-black md:text-5xl font-display"
+        >
+          Troubleshooting Guide
+        </h1>
+        <p class="mt-4 text-base leading-7 text-gray-500">
+          Resolve common issues with the ContraVault Add-In for Microsoft Word.
+        </p>
+      </div>
     </div>
-    <div class="mt-8 space-y-6">
-      <!-- Issue 1 -->
+    <div>
       <div
-        x-data="{ id: $id('accordion') }"
-        :class="{ 'text-[#000000]': activeAccordion==id, 'text-zinc-400 hover:text-accent-500': activeAccordion!=id }"
-        class="cursor-pointer group text-[#000000]"
+        class="mx-auto max-w-[40rem] prose-base prose text-gray-500 prose-h3:text-black prose-a:font-semibold prose-a:text-accent-300 hover:prose-a:text-black"
       >
-        <button
-          @click="setActiveAccordion(id)"
-          class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
-        >
-          <span>Installation Issues</span>
-          <svg
-            class="w-5 h-5 duration-300 ease-out text-accent-500"
-            :class="{ '-rotate-[45deg]': activeAccordion==id }"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M12 6v12m6-6H6"></path>
-          </svg>
-        </button>
-        <div x-show="activeAccordion==id" x-collapse="">
-          <div class="p-4 pt-2 text-zinc-300">
-            <p>
-              Problem: Unable to install the ContraVault Add-In from Microsoft
-              AppSource.
-            </p>
-            <ul class="list-disc list-inside mt-2">
-              <li>
-                <strong>Check Compatibility:</strong> Ensure your version of Microsoft
-                Word supports Add-Ins from AppSource. ContraVault requires Word 2016
-                or later, or a Microsoft 365 subscription.
-              </li>
-              <li>
-                <strong>Permissions:</strong> Ensure you have administrative rights
-                to install Add-Ins in Word. If you’re on a company network, contact
-                your IT administrator.
-              </li>
-              <li>
-                <strong>Restart Word:</strong> Close and restart Word, then try reinstalling
-                the Add-In from AppSource.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Issue 2 -->
-      <div
-        x-data="{ id: $id('accordion') }"
-        :class="{ 'text-[#000000]': activeAccordion==id, 'text-zinc-400 hover:text-accent-500': activeAccordion!=id }"
-        class="cursor-pointer group text-zinc-400 hover:text-accent-500"
-      >
-        <button
-          @click="setActiveAccordion(id)"
-          class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
-        >
-          <span>Add-In Not Appearing After Installation</span>
-          <svg
-            class="w-5 h-5 duration-300 ease-out text-accent-500"
-            :class="{ '-rotate-[45deg]': activeAccordion==id }"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M12 6v12m6-6H6"></path>
-          </svg>
-        </button>
-        <div x-show="activeAccordion==id" x-collapse="">
-          <div class="p-4 pt-2 text-zinc-300">
-            <p>
-              Problem: ContraVault is not visible in the Word ribbon after
-              installation.
-            </p>
-            <ul class="list-disc list-inside mt-2">
-              <li>
-                <strong>Enable the Add-In:</strong> Go to File > Options > Add-Ins.
-                Under Manage, select COM Add-ins or Office Add-ins, and click Go.
-                Check if ContraVault is listed and ensure it is enabled.
-              </li>
-              <li>
-                <strong>Check Disabled Add-Ins:</strong> If ContraVault appears under
-                disabled Add-Ins, select it and click Enable.
-              </li>
-              <li>
-                <strong>Restart Word:</strong> Restart Word to refresh the Add-In
-                ribbon display.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Repeat similar sections for each troubleshooting issue -->
-      <div
-        x-data="{ id: $id('accordion') }"
-        :class="{ 'text-[#000000]': activeAccordion==id, 'text-zinc-400 hover:text-accent-500': activeAccordion!=id }"
-        class="cursor-pointer group text-zinc-400 hover:text-accent-500"
-      >
-        <button
-          @click="setActiveAccordion(id)"
-          class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
-        >
-          <span>Contact Support</span>
-          <svg
-            class="w-5 h-5 duration-300 ease-out text-accent-500"
-            :class="{ '-rotate-[45deg]': activeAccordion==id }"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M12 6v12m6-6H6"></path>
-          </svg>
-        </button>
-        <div x-show="activeAccordion==id" x-collapse="">
-          <div class="p-4 pt-2 text-zinc-300">
-            <p>
-              If you encounter an issue not listed here or require additional
-              help, please contact our support team:
-            </p>
-            <ul class="list-disc list-inside mt-2">
-              <li>Email: help@blozum.com</li>
-              <li>Phone: +91-9717600000</li>
-            </ul>
-          </div>
-        </div>
+        <h3>1. Installation Issues</h3>
+        <p>
+          <strong>Problem:</strong> Unable to install the ContraVault Add-In from
+          Microsoft AppSource.
+        </p>
+        <ul>
+          <li>
+            <strong>Check Compatibility:</strong> Ensure your version of Microsoft
+            Word supports Add-Ins from AppSource. ContraVault requires Word 2016
+            or later, or a Microsoft 365 subscription.
+          </li>
+          <li>
+            <strong>Permissions:</strong> Ensure you have administrative rights to
+            install Add-Ins in Word. If you’re on a company network, contact your
+            IT administrator.
+          </li>
+          <li>
+            <strong>Restart Word:</strong> Close and restart Word, then try reinstalling
+            the Add-In from AppSource.
+          </li>
+        </ul>
+
+        <h3>2. Add-In Not Appearing After Installation</h3>
+        <p>
+          <strong>Problem:</strong> ContraVault is not visible in the Word ribbon
+          after installation.
+        </p>
+        <ul>
+          <li>
+            <strong>Enable the Add-In:</strong> Go to File > Options > Add-Ins. Under
+            Manage, select COM Add-ins or Office Add-ins, and click Go. Check if
+            ContraVault is listed and ensure it is enabled.
+          </li>
+          <li>
+            <strong>Check Disabled Add-Ins:</strong> If ContraVault appears under
+            disabled Add-Ins, select it and click Enable.
+          </li>
+          <li>
+            <strong>Restart Word:</strong> Restart Word to refresh the Add-In ribbon
+            display.
+          </li>
+        </ul>
+
+        <h3>3. Slow or Unresponsive Performance</h3>
+        <p>
+          <strong>Problem:</strong> The ContraVault Add-In is running slowly or freezing.
+        </p>
+        <ul>
+          <li>
+            <strong>Close Other Applications:</strong> High memory usage by other
+            applications may slow down the Add-In’s performance. Close unnecessary
+            programs.
+          </li>
+          <li>
+            <strong>Update Word:</strong> Make sure your Microsoft Word application
+            is up to date. Go to File > Account > Update Options and select Update
+            Now.
+          </li>
+          <li>
+            <strong>Clear Cache:</strong> Clear the cache in your Word Add-In settings.
+            This can often resolve performance lags.
+          </li>
+          <li>
+            <strong>Reinstall the Add-In:</strong> Uninstall and reinstall the ContraVault
+            Add-In from AppSource.
+          </li>
+        </ul>
+
+        <h3>4. Unable to Access Certain Features</h3>
+        <p>
+          <strong>Problem:</strong> Specific features, like Clause Modification or
+          AI Compliance Checks, are not working.
+        </p>
+        <ul>
+          <li>
+            <strong>Check Your Plan:</strong> Ensure you’re subscribed to a plan
+            that supports the feature you’re trying to access. Contact ContraVault
+            support if you need help with upgrading your subscription.
+          </li>
+          <li>
+            <strong>Verify Internet Connection:</strong> Ensure you have a stable
+            internet connection, as some features require cloud connectivity to work
+            correctly.
+          </li>
+          <li>
+            <strong>Clear Cookies/Cache:</strong> Go to your browser settings and
+            clear the cookies and cache used for Office Add-Ins.
+          </li>
+          <li>
+            <strong>Contact Support:</strong> If the issue persists, contact ContraVault
+            support for further assistance.
+          </li>
+        </ul>
+
+        <h3>5. Data Privacy or Security Concerns</h3>
+        <p>
+          <strong>Problem:</strong> Concerns about data being accessed by the Add-In.
+        </p>
+        <ul>
+          <li>
+            <strong>Review Permissions:</strong> ContraVault only accesses the data
+            in your active document. No additional data is collected without user
+            consent.
+          </li>
+          <li>
+            <strong>Data Processing Security:</strong> All data processed by the
+            Add-In is handled securely, in compliance with GDPR and other applicable
+            regulations. For more details, refer to our Privacy Policy.
+          </li>
+          <li>
+            <strong>Contact Support:</strong> If you have further concerns, reach
+            out to our privacy team or support.
+          </li>
+        </ul>
+
+        <h3>6. Error Messages or Crashes</h3>
+        <p>
+          <strong>Problem:</strong> Receiving error messages or the Add-In crashes
+          unexpectedly.
+        </p>
+        <ul>
+          <li>
+            <strong>Take Note of the Error Message:</strong> If an error message
+            appears, take a screenshot or note the error code/message and contact
+            ContraVault support.
+          </li>
+          <li>
+            <strong>Restart Word:</strong> Close all Word windows and restart the
+            application.
+          </li>
+          <li>
+            <strong>Reinstall the Add-In:</strong> Uninstall the Add-In and reinstall
+            it from Microsoft AppSource.
+          </li>
+          <li>
+            <strong>Run Office Repair:</strong> Go to Control Panel > Programs and
+            Features > Microsoft Office > Change > Quick Repair. This can fix corrupted
+            Office files affecting Add-In functionality.
+          </li>
+        </ul>
+
+        <h3>7. Add-In Fails to Load</h3>
+        <p>
+          <strong>Problem:</strong> ContraVault fails to load when opening Word.
+        </p>
+        <ul>
+          <li>
+            <strong>Internet Connectivity:</strong> Check that you have a stable
+            internet connection. Some features may require connectivity to load properly.
+          </li>
+          <li>
+            <strong>Check Firewall Settings:</strong> Ensure that your network/firewall
+            settings allow access to ContraVault’s services. Contact your IT department
+            if needed.
+          </li>
+          <li>
+            <strong>Clear Office Cache:</strong> In File > Options > Trust Center
+            > Trust Center Settings, try clearing the Add-In cache.
+          </li>
+          <li>
+            <strong>Reinstall the Add-In:</strong> Uninstall and reinstall ContraVault
+            from Microsoft AppSource.
+          </li>
+        </ul>
+
+        <h3>Contact Support</h3>
+        <p>
+          If you encounter an issue not listed here or require additional help,
+          please contact our support team:
+        </p>
+        <ul>
+          <li>Email: <a href="mailto:help@blozum.com">help@blozum.com</a></li>
+          <li>Phone: +91-9717600000</li>
+        </ul>
       </div>
     </div>
   </div>
