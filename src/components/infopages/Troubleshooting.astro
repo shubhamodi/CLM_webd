@@ -1,0 +1,158 @@
+<section>
+  <div
+    class="mx-auto w-full lg:px-24 max-w-7xl md:px-12 items-center px-8 py-24 scroll-mt-12"
+  >
+    <div>
+      <p
+        class="text-3xl font-normal tracking-tight text-[#000000] font-display"
+      >
+        Troubleshooting Guide
+      </p>
+      <p class="text-base mt-4 text-zinc-300">
+        Resolve common issues with the ContraVault Add-In for Microsoft Word.
+      </p>
+    </div>
+    <div class="mt-8 space-y-6">
+      <!-- Issue 1 -->
+      <div
+        x-data="{ id: $id('accordion') }"
+        :class="{ 'text-[#000000]': activeAccordion==id, 'text-zinc-400 hover:text-accent-500': activeAccordion!=id }"
+        class="cursor-pointer group text-[#000000]"
+      >
+        <button
+          @click="setActiveAccordion(id)"
+          class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
+        >
+          <span>Installation Issues</span>
+          <svg
+            class="w-5 h-5 duration-300 ease-out text-accent-500"
+            :class="{ '-rotate-[45deg]': activeAccordion==id }"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 6v12m6-6H6"></path>
+          </svg>
+        </button>
+        <div x-show="activeAccordion==id" x-collapse="">
+          <div class="p-4 pt-2 text-zinc-300">
+            <p>
+              Problem: Unable to install the ContraVault Add-In from Microsoft
+              AppSource.
+            </p>
+            <ul class="list-disc list-inside mt-2">
+              <li>
+                <strong>Check Compatibility:</strong> Ensure your version of Microsoft
+                Word supports Add-Ins from AppSource. ContraVault requires Word 2016
+                or later, or a Microsoft 365 subscription.
+              </li>
+              <li>
+                <strong>Permissions:</strong> Ensure you have administrative rights
+                to install Add-Ins in Word. If you’re on a company network, contact
+                your IT administrator.
+              </li>
+              <li>
+                <strong>Restart Word:</strong> Close and restart Word, then try reinstalling
+                the Add-In from AppSource.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Issue 2 -->
+      <div
+        x-data="{ id: $id('accordion') }"
+        :class="{ 'text-[#000000]': activeAccordion==id, 'text-zinc-400 hover:text-accent-500': activeAccordion!=id }"
+        class="cursor-pointer group text-zinc-400 hover:text-accent-500"
+      >
+        <button
+          @click="setActiveAccordion(id)"
+          class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
+        >
+          <span>Add-In Not Appearing After Installation</span>
+          <svg
+            class="w-5 h-5 duration-300 ease-out text-accent-500"
+            :class="{ '-rotate-[45deg]': activeAccordion==id }"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 6v12m6-6H6"></path>
+          </svg>
+        </button>
+        <div x-show="activeAccordion==id" x-collapse="">
+          <div class="p-4 pt-2 text-zinc-300">
+            <p>
+              Problem: ContraVault is not visible in the Word ribbon after
+              installation.
+            </p>
+            <ul class="list-disc list-inside mt-2">
+              <li>
+                <strong>Enable the Add-In:</strong> Go to File > Options > Add-Ins.
+                Under Manage, select COM Add-ins or Office Add-ins, and click Go.
+                Check if ContraVault is listed and ensure it is enabled.
+              </li>
+              <li>
+                <strong>Check Disabled Add-Ins:</strong> If ContraVault appears under
+                disabled Add-Ins, select it and click Enable.
+              </li>
+              <li>
+                <strong>Restart Word:</strong> Restart Word to refresh the Add-In
+                ribbon display.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat similar sections for each troubleshooting issue -->
+      <div
+        x-data="{ id: $id('accordion') }"
+        :class="{ 'text-[#000000]': activeAccordion==id, 'text-zinc-400 hover:text-accent-500': activeAccordion!=id }"
+        class="cursor-pointer group text-zinc-400 hover:text-accent-500"
+      >
+        <button
+          @click="setActiveAccordion(id)"
+          class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
+        >
+          <span>Contact Support</span>
+          <svg
+            class="w-5 h-5 duration-300 ease-out text-accent-500"
+            :class="{ '-rotate-[45deg]': activeAccordion==id }"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 6v12m6-6H6"></path>
+          </svg>
+        </button>
+        <div x-show="activeAccordion==id" x-collapse="">
+          <div class="p-4 pt-2 text-zinc-300">
+            <p>
+              If you encounter an issue not listed here or require additional
+              help, please contact our support team:
+            </p>
+            <ul class="list-disc list-inside mt-2">
+              <li>Email: help@blozum.com</li>
+              <li>Phone: +91-9717600000</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

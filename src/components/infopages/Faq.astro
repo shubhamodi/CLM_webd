@@ -24,6 +24,7 @@
   }"
         class="relative w-full mx-auto font-normal lg:col-span-2"
       >
+        <!-- FAQ Item 1 -->
         <div
           x-data="{ id: $id('accordion') }"
           :class="{ 'text-[#000000]': activeAccordion==id, 'text-zinc-400 hover:text-accent-500': activeAccordion!=id }"
@@ -33,31 +34,34 @@
             @click="setActiveAccordion(id)"
             class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
           >
-            <span>How does end-to-end encryption work?</span>
+            <span>What is the Technology Behind ContraVault?</span>
             <svg
-              class="w-5 h-5 duration-300 ease-out text-accent-500 -rotate-[45deg]"
+              class="w-5 h-5 duration-300 ease-out text-accent-500"
               :class="{ '-rotate-[45deg]': activeAccordion==id }"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              ><path
+            >
+              <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M12 6v12m6-6H6"></path></svg
-            >
+                d="M12 6v12m6-6H6"></path>
+            </svg>
           </button>
           <div x-show="activeAccordion==id" x-collapse="">
             <div class="p-4 pt-2 text-zinc-300">
-              End-to-end encryption ensures that only the sender and recipient
-              can access the content of a message. The information is encrypted
-              on the sender's device and can only be decrypted by the intended
-              recipient, preventing any intermediaries, including the platform
-              provider, from accessing the data.
+              ContraVault leverages advanced AI technology, specifically refined
+              Large Language Models (LLMs) designed for complex legal analysis
+              and contract management. These LLMs analyze your contracts,
+              identify relevant clauses, flag potential compliance issues, and
+              make context-driven recommendations to ensure your documents align
+              with your specific legal guidelines.
             </div>
           </div>
         </div>
+        <!-- FAQ Item 2 -->
         <div
           x-data="{ id: $id('accordion') }"
           :class="{ 'text-[#000000]': activeAccordion==id, 'text-zinc-400 hover:text-accent-500': activeAccordion!=id }"
@@ -67,9 +71,7 @@
             @click="setActiveAccordion(id)"
             class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
           >
-            <span
-              >Can I access my encrypted data if I forget my encryption key?</span
-            >
+            <span>How Does ContraVault Protect My Data?</span>
             <svg
               class="w-5 h-5 duration-300 ease-out text-accent-500"
               :class="{ '-rotate-[45deg]': activeAccordion==id }"
@@ -78,11 +80,12 @@
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              ><path
+            >
+              <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M12 6v12m6-6H6"></path></svg
-            >
+                d="M12 6v12m6-6H6"></path>
+            </svg>
           </button>
           <div
             x-show="activeAccordion==id"
@@ -90,14 +93,35 @@
             style="display: none;"
           >
             <div class="p-4 pt-2 text-zinc-300">
-              No, forgetting or losing your encryption key means that your
-              encrypted data cannot be accessed. This is a crucial security
-              measure to ensure that even if someone gains unauthorized access
-              to your account, they won't be able to decrypt and view your
-              messages or files.
+              Your data security is our top priority. ContraVault ensures data
+              privacy and protection in the following ways:
+              <ul class="list-disc list-inside mt-2">
+                <li>
+                  Data Handling: ContraVault only accesses the document you’re
+                  actively working on.
+                </li>
+                <li>
+                  Data Storage: Information sent to the AI model is processed
+                  securely, with compliance to GDPR and other leading privacy
+                  regulations.
+                </li>
+                <li>
+                  Microsoft Privacy: Any document data processed using our
+                  models is not used by Microsoft for model training purposes.
+                </li>
+                <li>
+                  User Logs: We maintain logs for troubleshooting and support,
+                  with an option to delete user data upon request.
+                </li>
+                <li>
+                  Secure Access: Your login credentials are safely stored and
+                  managed via enterprise-grade solutions.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
+        <!-- FAQ Item 3 -->
         <div
           x-data="{ id: $id('accordion') }"
           :class="{ 'text-[#000000]': activeAccordion==id, 'text-zinc-400 hover:text-accent-500': activeAccordion!=id }"
@@ -107,10 +131,7 @@
             @click="setActiveAccordion(id)"
             class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
           >
-            <span
-              >Are there any limitations to the self-destructing messages
-              feature?</span
-            >
+            <span>What File Formats Does ContraVault Support?</span>
             <svg
               class="w-5 h-5 duration-300 ease-out text-accent-500"
               :class="{ '-rotate-[45deg]': activeAccordion==id }"
@@ -119,11 +140,12 @@
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              ><path
+            >
+              <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M12 6v12m6-6H6"></path></svg
-            >
+                d="M12 6v12m6-6H6"></path>
+            </svg>
           </button>
           <div
             x-show="activeAccordion==id"
@@ -131,211 +153,14 @@
             style="display: none;"
           >
             <div class="p-4 pt-2 text-zinc-300">
-              Self-destructing messages are designed to automatically delete
-              themselves after a specific period or upon being read by the
-              recipient. However, it's important to note that the feature only
-              removes the message from the devices involved in the conversation.
-              Recipients may take screenshots or use other means to capture the
-              content, which is beyond the platform's control.
+              ContraVault supports .pdf, .docx, .txt, and .xlsx file formats to
+              ensure seamless integration with modern document standards. Note
+              that .doc files and documents in compatibility mode are not
+              supported.
             </div>
           </div>
         </div>
-        <div
-          x-data="{ id: $id('accordion') }"
-          :class="{ 'text-[#000000]': activeAccordion==id, 'text-zinc-400 hover:text-accent-500': activeAccordion!=id }"
-          class="cursor-pointer group text-zinc-400 hover:text-accent-500"
-        >
-          <button
-            @click="setActiveAccordion(id)"
-            class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
-          >
-            <span
-              >What happens if I enable two-factor authentication and lose my
-              device?</span
-            >
-            <svg
-              class="w-5 h-5 duration-300 ease-out text-accent-500"
-              :class="{ '-rotate-[45deg]': activeAccordion==id }"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 6v12m6-6H6"></path></svg
-            >
-          </button>
-          <div
-            x-show="activeAccordion==id"
-            x-collapse=""
-            style="display: none;"
-          >
-            <div class="p-4 pt-2 text-zinc-300">
-              Losing your device doesn't automatically compromise your account's
-              security. It's recommended to contact our support team as soon as
-              possible to disable the two-factor authentication on your lost
-              device and set up the authentication on your new device. This
-              process will help protect your account from unauthorized access
-              while ensuring you can regain access to it.
-            </div>
-          </div>
-        </div>
-        <div
-          x-data="{ id: $id('accordion') }"
-          :class="{ 'text-[#000000]': activeAccordion==id, 'text-zinc-400 hover:text-accent-500': activeAccordion!=id }"
-          class="cursor-pointer group text-zinc-400 hover:text-accent-500"
-        >
-          <button
-            @click="setActiveAccordion(id)"
-            class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
-          >
-            <span
-              >Is my personal information shared or sold to third parties?</span
-            >
-            <svg
-              class="w-5 h-5 duration-300 ease-out text-accent-500"
-              :class="{ '-rotate-[45deg]': activeAccordion==id }"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 6v12m6-6H6"></path></svg
-            >
-          </button>
-          <div
-            x-show="activeAccordion==id"
-            x-collapse=""
-            style="display: none;"
-          >
-            <div class="p-4 pt-2 text-zinc-300">
-              No, we strictly adhere to a privacy-centric approach. Your
-              personal information is never shared, sold, or monetized. We
-              prioritize your privacy and ensure that your data remains
-              confidential and only accessible to you.
-            </div>
-          </div>
-        </div>
-        <div
-          x-data="{ id: $id('accordion') }"
-          :class="{ 'text-[#000000]': activeAccordion==id, 'text-zinc-400 hover:text-accent-500': activeAccordion!=id }"
-          class="cursor-pointer group text-zinc-400 hover:text-accent-500"
-        >
-          <button
-            @click="setActiveAccordion(id)"
-            class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
-          >
-            <span>Can I use this platform on multiple devices?</span>
-            <svg
-              class="w-5 h-5 duration-300 ease-out text-accent-500"
-              :class="{ '-rotate-[45deg]': activeAccordion==id }"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 6v12m6-6H6"></path></svg
-            >
-          </button>
-          <div
-            x-show="activeAccordion==id"
-            x-collapse=""
-            style="display: none;"
-          >
-            <div class="p-4 pt-2 text-zinc-300">
-              Yes, you can access our platform on multiple devices. Your
-              encrypted data remains synced across all devices, allowing you to
-              seamlessly communicate and access your files and messages from
-              anywhere.
-            </div>
-          </div>
-        </div>
-        <div
-          x-data="{ id: $id('accordion') }"
-          :class="{ 'text-[#000000]': activeAccordion==id, 'text-zinc-400 hover:text-accent-500': activeAccordion!=id }"
-          class="cursor-pointer group text-zinc-400 hover:text-accent-500"
-        >
-          <button
-            @click="setActiveAccordion(id)"
-            class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
-          >
-            <span
-              >Are there any storage limitations for files and documents?</span
-            >
-            <svg
-              class="w-5 h-5 duration-300 ease-out text-accent-500"
-              :class="{ '-rotate-[45deg]': activeAccordion==id }"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 6v12m6-6H6"></path></svg
-            >
-          </button>
-          <div
-            x-show="activeAccordion==id"
-            x-collapse=""
-            style="display: none;"
-          >
-            <div class="p-4 pt-2 text-zinc-300">
-              Our platform provides ample storage space for your files and
-              documents. However, there may be storage limitations based on the
-              pricing plan you choose. We offer flexible plans to suit your
-              needs and provide options to upgrade if you require additional
-              storage capacity.
-            </div>
-          </div>
-        </div>
-        <div
-          x-data="{ id: $id('accordion') }"
-          :class="{ 'text-[#000000]': activeAccordion==id, 'text-[#000000] hover:text-accent-500': activeAccordion!=id }"
-          class="cursor-pointer group text-zinc-400 hover:text-accent-500"
-        >
-          <button
-            @click="setActiveAccordion(id)"
-            class="flex items-center justify-between w-full p-4 pb-1 text-left font-medium select-none"
-          >
-            <span>Is it possible to export my data from the platform?</span>
-            <svg
-              class="w-5 h-5 duration-300 ease-out text-accent-500"
-              :class="{ '-rotate-[45deg]': activeAccordion==id }"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 6v12m6-6H6"></path></svg
-            >
-          </button>
-          <div
-            x-show="activeAccordion==id"
-            x-collapse=""
-            style="display: none;"
-          >
-            <div class="p-4 pt-2 text-zinc-300">
-              Yes, you can export your data from the platform. We offer export
-              features that allow you to download your messages, files, and
-              documents, ensuring you have a local copy for backup or migration
-              purposes. It provides you with greater control and flexibility
-              over your data.
-            </div>
-          </div>
-        </div>
+        <!-- Add other FAQ items here in the same format -->
       </div>
     </div>
   </div>
